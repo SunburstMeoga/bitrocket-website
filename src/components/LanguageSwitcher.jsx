@@ -34,6 +34,16 @@ const LanguageSwitcher = () => {
         >
           中文
         </button>
+        <button
+          onClick={() => changeLanguage('ko')}
+          className={`px-[12vw] lg:px-[12vw] xl:px-[12vw] py-[6vw] lg:py-[6vw] xl:py-[6vw] text-[14vw] lg:text-[14vw] xl:text-[14vw] rounded-[4vw] lg:rounded-[4vw] xl:rounded-[4vw] transition-colors ${
+            i18n.language === 'ko'
+              ? 'bg-blue-500 text-white'
+              : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+          }`}
+        >
+          한국어
+        </button>
       </div>
     </div>
   )

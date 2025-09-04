@@ -1,0 +1,12 @@
+{
+  "welcome": "BitRocket 웹사이트에 오신 것을 환영합니다",
+  "description": "React + Vite + Tailwind CSS + i18n",
+  "language": "언어",
+  "responsive_test": "반응형 테스트",
+  "mobile": "모바일",
+  "pad": "태블릿", 
+  "pc": "PC",
+  "width": "너비",
+  "height": "높이",
+  "test_box": "테스트 박스"
+}

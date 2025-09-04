@@ -5,6 +5,7 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 // 导入语言资源
 import en from './locales/en.json'
 import zh from './locales/zh.json'
+import ko from './locales/ko.json'
 
 const resources = {
   en: {
@@ -12,6 +13,9 @@ const resources = {
   },
   zh: {
     translation: zh
+  },
+  ko: {
+    translation: ko
   }
 }
 
