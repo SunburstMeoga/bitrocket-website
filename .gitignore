@@ -50,6 +50,14 @@ Thumbs.db
 *.tmp
 *.temp
 
-# 锁文件（可选，根据团队需要决定是否忽略）
-# package-lock.json
-# yarn.lock
+# npm 锁文件（使用 yarn 时应该忽略）
+package-lock.json
+
+# yarn 相关文件（保留 yarn.lock，忽略其他）
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
