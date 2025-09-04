@@ -46,7 +46,8 @@ const Header = () => {
 
   const languages = [
     { code: 'en', label: 'English' },
-    { code: 'zh', label: '中文' }
+    { code: 'zh', label: '中文' },
+    { code: 'ko', label: '한국어' }
   ]
 
   const menuItems = ['Home', 'Prediction Market', 'Staking', 'White Paper']
@@ -107,7 +108,7 @@ const Header = () => {
               >
                 <LanguageIcon className="w-[18px] h-[18px]" />
                 <span className="text-[14px] font-semibold">
-                  {currentLanguage === 'en' ? 'Eng' : '中文'}
+                  {currentLanguage === 'en' ? 'Eng' : currentLanguage === 'zh' ? '中文' : '한국어'}
                 </span>
                 <DropdownIcon className="w-[6px] h-[3px]" isOpen={isLanguageDropdownOpen} />
               </button>
@@ -191,7 +192,7 @@ const Header = () => {
             >
               <LanguageIcon className="w-[18px] h-[18px]" />
               <span className="text-[11px] font-semibold">
-                {currentLanguage === 'en' ? 'Eng' : '中文'}
+                {currentLanguage === 'en' ? 'Eng' : currentLanguage === 'zh' ? '中文' : '한국어'}
               </span>
               <DropdownIcon className="w-[6px] h-[3px]" isOpen={isLanguageDropdownOpen} />
             </button>
@@ -247,7 +248,7 @@ const Header = () => {
             >
               <LanguageIcon className="w-[32px] h-[32px]" />
               <span className="text-[20px] font-semibold">
-                {currentLanguage === 'en' ? 'Eng' : '中文'}
+                {currentLanguage === 'en' ? 'Eng' : currentLanguage === 'zh' ? '中文' : '한국어'}
               </span>
               <DropdownIcon className="w-[13px] h-[7px]" isOpen={isLanguageDropdownOpen} />
             </button>
