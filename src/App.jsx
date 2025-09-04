@@ -1,34 +1,29 @@
-import React from 'react'
 import { useTranslation } from 'react-i18next'
-import LanguageSwitcher from './components/LanguageSwitcher'
+import Header from './components/Header'
 
 function App() {
   const { t } = useTranslation()
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* 头部 */}
-      <header className="bg-white shadow-sm p-[20vw] lg:p-[20vw] xl:p-[20vw]">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div>
-            <h1 className="text-[32vw] lg:text-[32vw] xl:text-[32vw] font-bold text-gray-900">
-              {t('welcome')}
-            </h1>
-            <p className="text-[16vw] lg:text-[16vw] xl:text-[16vw] text-gray-600 mt-[8vw] lg:mt-[8vw] xl:mt-[8vw]">
-              {t('description')}
+    <div className="min-h-screen bg-[#121212]">
+      {/* 顶部菜单栏 */}
+      <Header />
+
+      {/* 主要内容 - 添加顶部间距以避免被固定头部遮挡 */}
+      <main className="pt-[58px] lg:pt-[94px] xl:pt-[176px] min-h-screen">
+        {/* 这里可以添加你的主要内容 */}
+        <div className="text-center py-[40vw] px-4">
+          <h1 className="text-[32vw] lg:text-[32vw] xl:text-[32vw] font-bold text-white mb-4">
+            {t('welcome')}
+          </h1>
+          <p className="text-[16vw] lg:text-[16vw] xl:text-[16vw] text-gray-300 mt-[8vw] lg:mt-[8vw] xl:mt-[8vw]">
+            {t('description')}
+          </p>
+          <div className="mt-8">
+            <p className="text-[18vw] text-gray-400">
+              {t('content_placeholder', '内容区域，可以在这里添加你的组件')}
             </p>
           </div>
-          <LanguageSwitcher />
-        </div>
-      </header>
-
-      {/* 主要内容 */}
-      <main className="max-w-7xl mx-auto p-[20vw]">
-        {/* 这里可以添加你的主要内容 */}
-        <div className="text-center py-[40vw]">
-          <p className="text-[18vw] text-gray-600">
-            {t('content_placeholder', '内容区域，可以在这里添加你的组件')}
-          </p>
         </div>
       </main>
     </div>
