@@ -1,0 +1,12 @@
+{
+  "welcome": "欢迎来到BitRocket网站",
+  "description": "React + Vite + Tailwind CSS + i18n",
+  "language": "语言",
+  "responsive_test": "响应式测试",
+  "mobile": "手机端",
+  "pad": "平板端", 
+  "pc": "电脑端",
+  "width": "宽度",
+  "height": "高度",
+  "test_box": "测试盒子"
+}

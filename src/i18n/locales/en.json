@@ -1,0 +1,12 @@
+{
+  "welcome": "Welcome to BitRocket Website",
+  "description": "React + Vite + Tailwind CSS + i18n",
+  "language": "Language",
+  "responsive_test": "Responsive Test",
+  "mobile": "Mobile",
+  "pad": "Pad", 
+  "pc": "PC",
+  "width": "Width",
+  "height": "Height",
+  "test_box": "Test Box"
+}

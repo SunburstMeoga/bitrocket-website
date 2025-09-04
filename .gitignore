@@ -1,0 +1,55 @@
+# 依赖目录
+node_modules/
+
+# 构建输出目录
+dist/
+
+# 本地环境变量文件
+.env
+.env.local
+.env.development.local
+.env.production.local
+.env.test.local
+
+# 日志
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 运行时数据
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# 覆盖率目录
+coverage/
+.nyc_output/
+
+# 缓存目录
+.npm
+.eslintcache
+.vite/
+
+# 可选：IDE或编辑器目录
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 操作系统生成的文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.temp
+
+# 锁文件（可选，根据团队需要决定是否忽略）
+# package-lock.json
+# yarn.lock
