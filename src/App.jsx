@@ -1,26 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useTranslation } from 'react-i18next'
 import LanguageSwitcher from './components/LanguageSwitcher'
-import ResponsiveDemo from './components/ResponsiveDemo'
-import VwTest from './components/VwTest'
 
 function App() {
   const { t } = useTranslation()
-
-  useEffect(() => {
-    const updateBaseWidth = () => {
-      const baseWidth = getComputedStyle(document.documentElement).getPropertyValue('--base-width')
-      const display = document.getElementById('base-width-display')
-      if (display) {
-        display.textContent = baseWidth || '未设置'
-      }
-    }
-
-    updateBaseWidth()
-    window.addEventListener('resize', updateBaseWidth)
-
-    return () => window.removeEventListener('resize', updateBaseWidth)
-  }, [])
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -41,8 +24,12 @@ function App() {
 
       {/* 主要内容 */}
       <main className="max-w-7xl mx-auto p-[20vw]">
-        <VwTest />
-        <ResponsiveDemo />
+        {/* 这里可以添加你的主要内容 */}
+        <div className="text-center py-[40vw]">
+          <p className="text-[18vw] text-gray-600">
+            {t('content_placeholder', '内容区域，可以在这里添加你的组件')}
+          </p>
+        </div>
       </main>
     </div>
   )
