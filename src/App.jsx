@@ -11,12 +11,12 @@ function App() {
       <Header />
 
       {/* 主要内容 - 添加顶部间距以避免被固定头部遮挡 */}
-      <main className="pt-[58px] lg:pt-[94px] xl:pt-[176px] min-h-screen">
+      <main className="pt-[58vw] lg:pt-[94vw] xl:pt-[176vw] min-h-screen">
         {/* Banner区域 - 仅在手机端显示 */}
         <Banner />
 
         {/* 其他内容区域 */}
-        <div className="text-center py-[40vw] px-4 hidden lg:block">
+        <div className="text-center py-[40vw] px-[16vw] hidden lg:block">
           <h1 className="text-[32vw] lg:text-[32vw] xl:text-[32vw] font-bold text-white mb-4">
             {t('welcome')}
           </h1>

@@ -105,28 +105,70 @@
   .w-\[100vw\] {
     width: calc(100 * 100vw / var(--base-width)) !important;
   }
+  .w-\[120vw\] {
+    width: calc(120 * 100vw / var(--base-width)) !important;
+  }
+  .w-\[150vw\] {
+    width: calc(150 * 100vw / var(--base-width)) !important;
+  }
   .w-\[200vw\] {
     width: calc(200 * 100vw / var(--base-width)) !important;
+  }
+  .w-\[280vw\] {
+    width: calc(280 * 100vw / var(--base-width)) !important;
   }
   .w-\[300vw\] {
     width: calc(300 * 100vw / var(--base-width)) !important;
   }
+  .w-\[356vw\] {
+    width: calc(356 * 100vw / var(--base-width)) !important;
+  }
   .w-\[362vw\] {
     width: calc(362 * 100vw / var(--base-width)) !important;
   }
+  .w-\[928vw\] {
+    width: calc(928 * 100vw / var(--base-width)) !important;
+  }
+  .w-\[1740vw\] {
+    width: calc(1740 * 100vw / var(--base-width)) !important;
+  }
 
   /* 高度 */
+  .h-\[24vw\] {
+    height: calc(24 * 100vw / var(--base-width)) !important;
+  }
+  .h-\[26vw\] {
+    height: calc(26 * 100vw / var(--base-width)) !important;
+  }
   .h-\[30vw\] {
     height: calc(30 * 100vw / var(--base-width)) !important;
+  }
+  .h-\[32vw\] {
+    height: calc(32 * 100vw / var(--base-width)) !important;
   }
   .h-\[38vw\] {
     height: calc(38 * 100vw / var(--base-width)) !important;
   }
+  .h-\[48vw\] {
+    height: calc(48 * 100vw / var(--base-width)) !important;
+  }
   .h-\[50vw\] {
     height: calc(50 * 100vw / var(--base-width)) !important;
   }
+  .h-\[58vw\] {
+    height: calc(58 * 100vw / var(--base-width)) !important;
+  }
+  .h-\[60vw\] {
+    height: calc(60 * 100vw / var(--base-width)) !important;
+  }
+  .h-\[94vw\] {
+    height: calc(94 * 100vw / var(--base-width)) !important;
+  }
   .h-\[100vw\] {
     height: calc(100 * 100vw / var(--base-width)) !important;
+  }
+  .h-\[176vw\] {
+    height: calc(176 * 100vw / var(--base-width)) !important;
   }
   .h-\[200vw\] {
     height: calc(200 * 100vw / var(--base-width)) !important;

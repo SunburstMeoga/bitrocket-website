@@ -1,3 +1,5 @@
+import vwPlugin from './src/utils/tailwind-vw-plugin.js'
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -19,4 +21,7 @@ export default {
       }
     },
   },
+  plugins: [
+    vwPlugin,
+  ],
 }

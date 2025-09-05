@@ -84,45 +84,43 @@ const Header = () => {
   }
 
   return (
-    <header className="w-full h-[58px] lg:h-[94px] xl:h-[176px] fixed top-0 left-0 z-50 shadow-lg">
+    <header className="w-full h-[58vw] lg:h-[94vw] xl:h-[176vw] fixed top-0 left-0 z-50 shadow-lg">
       <div className="w-full flex justify-center">
         {/* Mobile Layout */}
-        <div className="w-[356px] h-[58px] flex items-center justify-between lg:hidden">
+        <div className="w-[362vw] h-[58vw] flex items-center justify-between lg:hidden">
           {/* Logo - 左对齐 */}
           <div className="flex-shrink-0">
             <img
               src={logo}
               alt="BitRocket"
-              className="w-[120px] h-[26px] object-contain"
+              className="w-[120vw] h-[26vw] object-contain"
             />
           </div>
 
           {/* Right side controls - 右对齐 */}
-          <div className="flex items-center" style={{ gap: '32px' }}>
+          <div className="flex items-center gap-[32vw]">
             {/* Language Switcher */}
             <div className="relative" ref={languageDropdownRef}>
               <button
                 onClick={toggleLanguageDropdown}
-                className="flex items-center text-white hover:text-gray-300 transition-colors"
-                style={{ gap: '8px' }}
+                className="flex items-center text-white hover:text-gray-300 transition-colors gap-[8vw]"
               >
-                <LanguageIcon className="w-[18px] h-[18px]" />
-                <span className="text-[14px] font-semibold">
+                <LanguageIcon className="w-[18vw] h-[18vw]" />
+                <span className="text-[14vw] font-semibold">
                   {currentLanguage === 'en' ? 'Eng' : currentLanguage === 'zh' ? '中文' : '한국어'}
                 </span>
-                <DropdownIcon className="w-[6px] h-[3px]" isOpen={isLanguageDropdownOpen} />
+                <DropdownIcon className="w-[6vw] h-[3vw]" isOpen={isLanguageDropdownOpen} />
               </button>
 
               {/* Language Dropdown */}
-              <div className={`absolute top-full right-0 mt-2 bg-[#121212] border border-gray-700 rounded-lg shadow-lg transition-all duration-200 overflow-hidden ${
+              <div className={`absolute top-full right-0 mt-[8vw] bg-[#121212] border border-gray-700 rounded-lg shadow-lg transition-all duration-200 overflow-hidden ${
                 isLanguageDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
               }`} style={{ minWidth: 'max-content' }}>
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
                     onClick={() => toggleLanguage(lang.code)}
-                    className="block w-full text-left py-3 text-white hover:bg-gray-800 transition-colors text-[11px] font-semibold"
-                    style={{ height: '48px', display: 'flex', alignItems: 'center', paddingLeft: '18px', paddingRight: '18px' }}
+                    className="block w-full text-left py-[3vw] text-white hover:bg-gray-800 transition-colors text-[11vw] font-semibold h-[48vw] flex items-center px-[18vw]"
                   >
                     {lang.label}
                   </button>
@@ -134,21 +132,20 @@ const Header = () => {
             <div className="relative" ref={menuDropdownRef}>
               <button
                 onClick={toggleMenu}
-                className="w-6 h-6 text-white hover:text-gray-300 transition-colors"
+                className="w-[24vw] h-[24vw] text-white hover:text-gray-300 transition-colors"
               >
-                <HamburgerIcon className="w-6 h-6" isOpen={isMenuOpen} />
+                <HamburgerIcon className="w-[24vw] h-[24vw]" isOpen={isMenuOpen} />
               </button>
 
               {/* Menu Dropdown */}
-              <div className={`absolute top-full right-0 mt-2 bg-[#121212] border border-gray-700 rounded-lg shadow-lg transition-all duration-200 overflow-hidden ${
+              <div className={`absolute top-full right-0 mt-[8vw] bg-[#121212] border border-gray-700 rounded-lg shadow-lg transition-all duration-200 overflow-hidden ${
                 isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
               }`} style={{ minWidth: 'max-content' }}>
                 {menuItems.map((item) => (
                   <a
                     key={item}
                     href={`#${item.toLowerCase().replace(' ', '-')}`}
-                    className="block text-white hover:bg-gray-800 transition-colors text-[11px] font-semibold"
-                    style={{ height: '48px', display: 'flex', alignItems: 'center', paddingLeft: '18px', paddingRight: '18px' }}
+                    className="block text-white hover:bg-gray-800 transition-colors text-[11vw] font-semibold h-[48vw] flex items-center px-[18vw]"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item}
@@ -160,23 +157,23 @@ const Header = () => {
         </div>
 
         {/* Pad Layout (lg: 1024px+) */}
-        <div className="hidden lg:flex xl:hidden w-[928px] h-[94px] items-center justify-between">
+        <div className="hidden lg:flex xl:hidden w-[928vw] h-[94vw] items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
             <img
               src={logo}
               alt="BitRocket"
-              className="w-[150px] h-[32px] object-contain"
+              className="w-[150vw] h-[32vw] object-contain"
             />
           </div>
 
           {/* Menu Items - 水平居中显示 */}
-          <div className="flex items-center justify-center w-[288px]" style={{ gap: '24px' }}>
+          <div className="flex items-center justify-center w-[288vw] gap-[24vw]">
             {menuItems.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(' ', '-')}`}
-                className="text-white hover:text-gray-300 transition-colors text-[11px] font-semibold whitespace-nowrap"
+                className="text-white hover:text-gray-300 transition-colors text-[11vw] font-semibold whitespace-nowrap"
               >
                 {item}
               </a>
@@ -187,52 +184,50 @@ const Header = () => {
           <div className="relative" ref={languageDropdownRef}>
             <button
               onClick={toggleLanguageDropdown}
-              className="flex items-center text-white hover:text-gray-300 transition-colors"
-              style={{ gap: '8px' }}
+              className="flex items-center text-white hover:text-gray-300 transition-colors gap-[8vw]"
             >
-              <LanguageIcon className="w-[18px] h-[18px]" />
-              <span className="text-[11px] font-semibold">
+              <LanguageIcon className="w-[18vw] h-[18vw]" />
+              <span className="text-[11vw] font-semibold">
                 {currentLanguage === 'en' ? 'Eng' : currentLanguage === 'zh' ? '中文' : '한국어'}
               </span>
-              <DropdownIcon className="w-[6px] h-[3px]" isOpen={isLanguageDropdownOpen} />
+              <DropdownIcon className="w-[6vw] h-[3vw]" isOpen={isLanguageDropdownOpen} />
             </button>
 
             {/* Language Dropdown */}
-            <div className={`absolute top-full right-0 mt-2 bg-[#121212] border border-gray-700 rounded-lg shadow-lg transition-all duration-200 overflow-hidden ${
+            <div className={`absolute top-full right-0 mt-[8vw] bg-[#121212] border border-gray-700 rounded-lg shadow-lg transition-all duration-200 overflow-hidden ${
               isLanguageDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
             }`} style={{ minWidth: 'max-content' }}>
               {languages.map((lang) => (
                 <button
                   key={lang.code}
                   onClick={() => toggleLanguage(lang.code)}
-                  className="block w-full text-left py-3 text-white hover:bg-gray-800 transition-colors text-[11px] font-semibold"
-                  style={{ height: '48px', display: 'flex', alignItems: 'center', paddingLeft: '18px', paddingRight: '18px' }}
+                  className="block w-full text-left py-[12vw] text-white hover:bg-gray-800 transition-colors text-[11vw] font-semibold h-[48vw] flex items-center px-[18vw]"
                 >
                   {lang.label}
                 </button>
               ))}
             </div>
           </div>
-        </div> 
+        </div>
 
         {/* PC Layout (xl: 1280px+) */}
-        <div className="hidden xl:flex w-[1740px] h-[176px] items-center justify-between">
+        <div className="hidden xl:flex w-[1740vw] h-[176vw] items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
             <img
               src={logo}
               alt="BitRocket"
-              className="w-[280px] h-[60px] object-contain"
+              className="w-[280vw] h-[60vw] object-contain"
             />
           </div>
 
           {/* Menu Items - 水平居中显示 */}
-          <div className="flex items-center justify-center w-[547px]" style={{ gap: '48px' }}>
+          <div className="flex items-center justify-center w-[547vw] gap-[48vw]">
             {menuItems.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(' ', '-')}`}
-                className="text-white hover:text-gray-300 transition-colors text-[20px] font-semibold whitespace-nowrap"
+                className="text-white hover:text-gray-300 transition-colors text-[20vw] font-semibold whitespace-nowrap"
               >
                 {item}
               </a>
@@ -243,26 +238,24 @@ const Header = () => {
           <div className="relative" ref={languageDropdownRef}>
             <button
               onClick={toggleLanguageDropdown}
-              className="flex items-center text-white hover:text-gray-300 transition-colors"
-              style={{ gap: '8px' }}
+              className="flex items-center text-white hover:text-gray-300 transition-colors gap-[8vw]"
             >
-              <LanguageIcon className="w-[32px] h-[32px]" />
-              <span className="text-[20px] font-semibold">
+              <LanguageIcon className="w-[32vw] h-[32vw]" />
+              <span className="text-[20vw] font-semibold">
                 {currentLanguage === 'en' ? 'Eng' : currentLanguage === 'zh' ? '中文' : '한국어'}
               </span>
-              <DropdownIcon className="w-[13px] h-[7px]" isOpen={isLanguageDropdownOpen} />
+              <DropdownIcon className="w-[13vw] h-[7vw]" isOpen={isLanguageDropdownOpen} />
             </button>
 
             {/* Language Dropdown */}
-            <div className={`absolute top-full right-0 mt-2 bg-[#121212] border border-gray-700 rounded-lg shadow-lg transition-all duration-200 overflow-hidden ${
+            <div className={`absolute top-full right-0 mt-[8vw] bg-[#121212] border border-gray-700 rounded-lg shadow-lg transition-all duration-200 overflow-hidden ${
               isLanguageDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
             }`} style={{ minWidth: 'max-content' }}>
               {languages.map((lang) => (
                 <button
                   key={lang.code}
                   onClick={() => toggleLanguage(lang.code)}
-                  className="block w-full text-left py-3 text-white hover:bg-gray-800 transition-colors text-[11px] font-semibold"
-                  style={{ height: '48px', display: 'flex', alignItems: 'center', paddingLeft: '18px', paddingRight: '18px' }}
+                  className="block w-full text-left py-[12vw] text-white hover:bg-gray-800 transition-colors text-[20vw] font-semibold h-[48vw] flex items-center px-[18vw]"
                 >
                   {lang.label}
                 </button>

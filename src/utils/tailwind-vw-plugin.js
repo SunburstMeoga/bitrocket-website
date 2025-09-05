@@ -42,16 +42,16 @@ const vwPlugin = plugin(function({ matchUtilities, theme, addBase }) {
   // 添加CSS变量定义
   addBase({
     ':root': {
-      '--base-width': `${baseWidths.mobile}`
+      '--base-width': baseWidths.mobile
     },
     [`@media (min-width: ${theme('screens.lg')})`]: {
       ':root': {
-        '--base-width': `${baseWidths.pad}`
+        '--base-width': baseWidths.pad
       }
     },
     [`@media (min-width: ${theme('screens.xl')})`]: {
       ':root': {
-        '--base-width': `${baseWidths.pc}`
+        '--base-width': baseWidths.pc
       }
     }
   })
@@ -64,7 +64,6 @@ const vwPlugin = plugin(function({ matchUtilities, theme, addBase }) {
       'w': createValueHandler('width'),
     },
     {
-      values: theme('width'),
       type: ['length', 'percentage']
     }
   )
@@ -75,7 +74,6 @@ const vwPlugin = plugin(function({ matchUtilities, theme, addBase }) {
       'h': createValueHandler('height'),
     },
     {
-      values: theme('height'),
       type: ['length', 'percentage']
     }
   )
@@ -83,12 +81,85 @@ const vwPlugin = plugin(function({ matchUtilities, theme, addBase }) {
   // 处理字体大小
   matchUtilities(
     {
+      'text': createValueHandler('font-size'),
       'text-size': createValueHandler('font-size'),
       'font-size': createValueHandler('font-size'),
     },
     {
-      values: theme('fontSize'),
       type: ['length', 'percentage']
+    }
+  )
+
+  // 处理行高
+  matchUtilities(
+    {
+      'leading': createValueHandler('line-height'),
+    },
+    {
+      type: ['length', 'percentage']
+    }
+  )
+
+  // 处理字体间距
+  matchUtilities(
+    {
+      'tracking': createValueHandler('letter-spacing'),
+    },
+    {
+      type: ['length', 'percentage']
+    }
+  )
+
+  // 处理定位相关
+  matchUtilities(
+    {
+      'top': createValueHandler('top'),
+      'right': createValueHandler('right'),
+      'bottom': createValueHandler('bottom'),
+      'left': createValueHandler('left'),
+      'inset': createValueHandler('inset'),
+    },
+    {
+      type: ['length', 'percentage'],
+      supportsNegativeValues: true
+    }
+  )
+
+  // 处理最大最小宽高
+  matchUtilities(
+    {
+      'min-w': createValueHandler('min-width'),
+      'max-w': createValueHandler('max-width'),
+      'min-h': createValueHandler('min-height'),
+      'max-h': createValueHandler('max-height'),
+    },
+    {
+      type: ['length', 'percentage']
+    }
+  )
+
+  // 处理阴影和模糊相关
+  matchUtilities(
+    {
+      'blur': createValueHandler('filter'),
+      'backdrop-blur': createValueHandler('backdrop-filter'),
+    },
+    {
+      type: ['length']
+    }
+  )
+
+  // 处理变换相关
+  matchUtilities(
+    {
+      'translate-x': createValueHandler('transform'),
+      'translate-y': createValueHandler('transform'),
+      'scale': createValueHandler('transform'),
+      'rotate': createValueHandler('transform'),
+    },
+    {
+      type: ['length', 'percentage'],
+      supportsNegativeValues: true
     }
   )
 
@@ -116,7 +187,6 @@ const vwPlugin = plugin(function({ matchUtilities, theme, addBase }) {
       'pl': createValueHandler('padding-left'),
     },
     {
-      values: theme('padding'),
       type: ['length', 'percentage']
     }
   )
@@ -145,7 +215,6 @@ const vwPlugin = plugin(function({ matchUtilities, theme, addBase }) {
       'ml': createValueHandler('margin-left'),
     },
     {
-      values: theme('margin'),
       type: ['length', 'percentage'],
       supportsNegativeValues: true
     }
@@ -159,7 +228,6 @@ const vwPlugin = plugin(function({ matchUtilities, theme, addBase }) {
       'border': createValueHandler('border-width'),
     },
     {
-      values: theme('spacing'),
       type: ['length', 'percentage']
     }
   )
