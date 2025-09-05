@@ -47,6 +47,14 @@ const Banner = () => {
           </div>
         </div>
       </div>
+
+      {/* 底部渐变div - 仅手机端显示 */}
+      <div
+        className="absolute bottom-0 left-0 w-full h-[166vw] lg:hidden"
+        style={{
+          background: 'linear-gradient(180deg, rgba(25, 25, 25, 0) 0%, #191919 100%)'
+        }}
+      />
     </section>
   )
 }
