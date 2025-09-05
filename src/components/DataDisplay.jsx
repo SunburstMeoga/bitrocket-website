@@ -42,7 +42,7 @@ const DataDisplay = () => {
             </div>
 
             {/* 数值部分 */}
-            <div className="flex items-baseline justify-center mb-[16vw]">
+            <div className="flex items-baseline justify-center h-[76vw]">
               <span
                 className="text-[48vw] font-poppins-semibold"
                 style={{
@@ -68,7 +68,7 @@ const DataDisplay = () => {
             </div>
 
             {/* 描述文案部分 */}
-            <div className="text-white text-[16vw] font-poppins-semibold text-center">
+            <div className="text-[#9D9D9D] text-[16vw] font-poppins-semibold text-center -tracking-[0.5vw]">
               {item.description}
             </div>
           </div>

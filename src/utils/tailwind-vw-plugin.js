@@ -176,6 +176,18 @@ const vwPlugin = plugin(function({ addBase, addUtilities, matchUtilities, theme 
     }
   )
 
+  // 处理字间距 tracking-[数字vw]
+  matchUtilities(
+    {
+      'tracking': createValueHandler('letter-spacing'),
+    },
+    {
+      values: theme('letterSpacing'),
+      type: ['length', 'percentage'],
+      supportsNegativeValues: true
+    }
+  )
+
   // 特殊处理：覆盖 text-[数字vw] 的默认行为，使其应用到 font-size 而不是 color
   // 这需要在最后执行，以覆盖 Tailwind 的默认处理
   const textVwUtilities = {}
@@ -188,11 +200,29 @@ const vwPlugin = plugin(function({ addBase, addUtilities, matchUtilities, theme 
     }
   })
 
+  // 特殊处理：覆盖 tracking-[数字vw] 的默认行为，确保应用到 letter-spacing
+  const trackingVwUtilities = {}
+
+  // 生成常用的字间距 vw 值（包括负值）
+  const letterSpacings = [0.5, 1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10, 12, 16, 20]
+  letterSpacings.forEach(size => {
+    // 正值
+    trackingVwUtilities[`.tracking-\\[${size}vw\\]`] = {
+      'letter-spacing': `calc(${size} * 100vw / var(--base-width)) !important`
+    }
+    // 负值
+    trackingVwUtilities[`.tracking-\\[-${size}vw\\]`] = {
+      'letter-spacing': `calc(-${size} * 100vw / var(--base-width)) !important`
+    }
+  })
+
   // 添加这些工具类，使用高优先级覆盖默认行为
   addUtilities(textVwUtilities, { respectPrefix: false, respectImportant: false })
+  addUtilities(trackingVwUtilities, { respectPrefix: false, respectImportant: false })
 
   console.log('Dynamic vw utilities configured - any [数字vw] value will be automatically generated!')
   console.log(`Generated ${Object.keys(textVwUtilities).length} text-[数字vw] font-size utilities`)
+  console.log(`Generated ${Object.keys(trackingVwUtilities).length} tracking-[数字vw] letter-spacing utilities`)
 })
 
 module.exports = vwPlugin

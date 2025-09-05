@@ -20,17 +20,17 @@ const Banner = () => {
       <div className="relative z-10 flex justify-center">
         <div className="w-[362vw] mt-[93vw] flex flex-col items-start">
           {/* 第一部分：Revolutionize your */}
-          <div className="text-white text-[32vw] font-poppins-semibold">
+          <div className="text-white text-[32vw] font-poppins-semibold -tracking-[0.5vw]">
             {t('banner.title_part1')}
           </div>
 
           {/* 第二部分：cryptocur-rency experience */}
-          <div className="text-white text-[64vw] font-poppins-semibold leading-[58vw] mt-[18vw]">
+          <div className="text-white text-[64vw] font-poppins-semibold leading-[58vw] mt-[18vw] -tracking-[0.5vw]">
             {t('banner.title_part2')}
           </div>
 
           {/* 第三部分：描述文字 */}
-          <div className="text-white text-[20vw] font-poppins-regular leading-[29vw] mt-[18vw]">
+          <div className="text-white text-[20vw] font-poppins-regular leading-[29vw] mt-[18vw] -tracking-[0.5vw]">
             {t('banner.description')}
           </div>
 
@@ -42,7 +42,7 @@ const Banner = () => {
           </div>
 
           {/* 第五部分：流动性信息 */}
-          <div className="text-white text-[14vw] font-poppins-medium mt-[18vw]">
+          <div className="text-white text-[14vw] font-poppins-medium mt-[18vw] -tracking-[0.2vw]">
             {t('banner.liquidity_info')}
           </div>
         </div>

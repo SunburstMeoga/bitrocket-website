@@ -153,8 +153,8 @@ Generated 1008 vw utilities
 
 <img className="w-[120vw] h-[26vw]" src={logo} alt="Logo" />
 
-<span className="text-[17vw] leading-[24vw]">
-  字体17vw，行高24vw的文字
+<span className="text-[17vw] leading-[24vw] tracking-[1vw]">
+  字体17vw，行高24vw，字间距1vw的文字
 </span>
 
 <div className="mt-[93vw] px-[32vw] py-[12vw] gap-[8vw] rounded-[11vw]">
@@ -175,6 +175,7 @@ Generated 1008 vw utilities
 
 - `text-[数字vw]` - 字体大小
 - `leading-[数字vw]` - 行高
+- `tracking-[数字vw]` - 字间距（支持负值）
 
 #### 📦 间距相关
 
