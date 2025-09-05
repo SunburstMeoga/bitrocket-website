@@ -97,6 +97,9 @@
   .text-\[48vw\] {
     font-size: calc(48 * 100vw / var(--base-width)) !important;
   }
+  .text-\[64vw\] {
+    font-size: calc(64 * 100vw / var(--base-width)) !important;
+  }
 
   /* 宽度 */
   .w-\[100vw\] {
@@ -108,10 +111,16 @@
   .w-\[300vw\] {
     width: calc(300 * 100vw / var(--base-width)) !important;
   }
+  .w-\[362vw\] {
+    width: calc(362 * 100vw / var(--base-width)) !important;
+  }
 
   /* 高度 */
   .h-\[30vw\] {
     height: calc(30 * 100vw / var(--base-width)) !important;
+  }
+  .h-\[38vw\] {
+    height: calc(38 * 100vw / var(--base-width)) !important;
   }
   .h-\[50vw\] {
     height: calc(50 * 100vw / var(--base-width)) !important;
@@ -124,6 +133,9 @@
   }
   .h-\[300vw\] {
     height: calc(300 * 100vw / var(--base-width)) !important;
+  }
+  .h-\[797vw\] {
+    height: calc(797 * 100vw / var(--base-width)) !important;
   }
 
   /* 内边距 */
@@ -149,6 +161,12 @@
   }
   .mt-\[8vw\] {
     margin-top: calc(8 * 100vw / var(--base-width)) !important;
+  }
+  .mt-\[18vw\] {
+    margin-top: calc(18 * 100vw / var(--base-width)) !important;
+  }
+  .mt-\[93vw\] {
+    margin-top: calc(93 * 100vw / var(--base-width)) !important;
   }
   .mb-\[8vw\] {
     margin-bottom: calc(8 * 100vw / var(--base-width)) !important;
@@ -184,6 +202,9 @@
   .rounded-\[8vw\] {
     border-radius: calc(8 * 100vw / var(--base-width)) !important;
   }
+  .rounded-\[11vw\] {
+    border-radius: calc(11 * 100vw / var(--base-width)) !important;
+  }
   .rounded-\[12vw\] {
     border-radius: calc(12 * 100vw / var(--base-width)) !important;
   }
@@ -193,9 +214,24 @@
     padding-left: calc(12 * 100vw / var(--base-width)) !important;
     padding-right: calc(12 * 100vw / var(--base-width)) !important;
   }
+  .px-\[32vw\] {
+    padding-left: calc(32 * 100vw / var(--base-width)) !important;
+    padding-right: calc(32 * 100vw / var(--base-width)) !important;
+  }
   .py-\[6vw\] {
     padding-top: calc(6 * 100vw / var(--base-width)) !important;
     padding-bottom: calc(6 * 100vw / var(--base-width)) !important;
+  }
+
+  /* 行高 */
+  .leading-\[29vw\] {
+    line-height: calc(29 * 100vw / var(--base-width)) !important;
+  }
+  .leading-\[58vw\] {
+    line-height: calc(58 * 100vw / var(--base-width)) !important;
+  }
+  .leading-\[79vw\] {
+    line-height: calc(79 * 100vw / var(--base-width)) !important;
   }
 }
 

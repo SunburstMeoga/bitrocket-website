@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import Header from './components/Header'
+import Banner from './components/Banner'
 
 function App() {
   const { t } = useTranslation()
@@ -11,8 +12,11 @@ function App() {
 
       {/* 主要内容 - 添加顶部间距以避免被固定头部遮挡 */}
       <main className="pt-[58px] lg:pt-[94px] xl:pt-[176px] min-h-screen">
-        {/* 这里可以添加你的主要内容 */}
-        <div className="text-center py-[40vw] px-4">
+        {/* Banner区域 - 仅在手机端显示 */}
+        <Banner />
+
+        {/* 其他内容区域 */}
+        <div className="text-center py-[40vw] px-4 hidden lg:block">
           <h1 className="text-[32vw] lg:text-[32vw] xl:text-[32vw] font-bold text-white mb-4">
             {t('welcome')}
           </h1>

@@ -4,9 +4,16 @@
   "language": "语言",
   "responsive_test": "响应式测试",
   "mobile": "手机端",
-  "pad": "平板端", 
+  "pad": "平板端",
   "pc": "电脑端",
   "width": "宽度",
   "height": "高度",
-  "test_box": "测试盒子"
+  "test_box": "测试盒子",
+  "banner": {
+    "title_part1": "革命性改变您的",
+    "title_part2": "加密货币体验",
+    "description": "仅需一分钟预测BTC价格趋势，质押USDR获得每日收益，通过社区建设赚取无限奖励。",
+    "get_started": "开始使用",
+    "liquidity_info": "Aave当前提供670.4亿美元流动性。"
+  }
 }

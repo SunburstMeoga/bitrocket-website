@@ -84,7 +84,7 @@ const Header = () => {
   }
 
   return (
-    <header className="w-full h-[58px] lg:h-[94px] xl:h-[176px] bg-[#121212] fixed top-0 left-0 z-50 shadow-lg">
+    <header className="w-full h-[58px] lg:h-[94px] xl:h-[176px] fixed top-0 left-0 z-50 shadow-lg">
       <div className="w-full flex justify-center">
         {/* Mobile Layout */}
         <div className="w-[356px] h-[58px] flex items-center justify-between lg:hidden">
@@ -213,7 +213,7 @@ const Header = () => {
               ))}
             </div>
           </div>
-        </div>
+        </div> 
 
         {/* PC Layout (xl: 1280px+) */}
         <div className="hidden xl:flex w-[1740px] h-[176px] items-center justify-between">
