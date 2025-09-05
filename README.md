@@ -10,6 +10,7 @@
 - ✅ **i18n 多语言** - 支持中英文切换
 - ✅ **三端自适应** - 手机端(390px)、平板端(1024px)、PC 端(1280px)
 - ✅ **自定义 vw 插件** - 基于设计稿的响应式布局
+- ✅ **Poppins 字体系统** - 支持 5 种字重的独立字体族
 
 ## 🎯 响应式设计方案
 
@@ -73,19 +74,31 @@ calc(数字 * 100vw / var(--base-width))
 
 ```
 src/
-├── components/          # 组件目录
-│   ├── LanguageSwitcher.jsx  # 语言切换组件
-│   └── ResponsiveDemo.jsx    # 响应式演示组件
-├── i18n/               # 国际化配置
-│   ├── index.js        # i18n配置文件
-│   └── locales/        # 语言资源文件
-│       ├── en.json     # 英文
-│       └── zh.json     # 中文
-├── utils/              # 工具函数
+├── assets/             # 静态资源
+│   ├── fonts/          # Poppins 字体文件
+│   │   ├── Poppins-Light.ttf
+│   │   ├── Poppins-Regular.ttf
+│   │   ├── Poppins-Medium.ttf
+│   │   ├── Poppins-SemiBold.ttf
+│   │   └── Poppins-Bold.ttf
+│   ├── images/         # 图片资源
+│   └── animations/     # 动画文件
+├── components/         # 组件目录
+│   ├── Header.jsx      # 头部组件
+│   ├── Banner.jsx      # 横幅组件
+│   ├── DataDisplay.jsx # 数据展示组件
+│   └── LanguageSwitcher.jsx  # 语言切换组件
+├── i18n/              # 国际化配置
+│   ├── index.js       # i18n配置文件
+│   └── locales/       # 语言资源文件
+│       ├── en.json    # 英文
+│       ├── zh.json    # 中文
+│       └── ko.json    # 韩文
+├── utils/             # 工具函数
 │   └── tailwind-vw-plugin.js  # 自定义vw插件
-├── App.jsx             # 主应用组件
-├── main.jsx            # 应用入口
-└── index.css           # 全局样式
+├── App.jsx            # 主应用组件
+├── main.jsx           # 应用入口
+└── index.css          # 全局样式
 ```
 
 ## 开发指南
@@ -216,6 +229,47 @@ Generated 1008 vw utilities
 3. **数值直观**：`w-[120vw]` 在 390px 视口下约等于 30.77px
 4. **自动适配**：在不同设备上自动按比例缩放
 5. **性能优异**：插件预生成，无运行时计算开销
+
+## 🎨 Poppins 字体系统
+
+项目集成了完整的 Poppins 字体系统，支持 5 种字重，每种字重都使用独立的字体族。
+
+### 可用字体类
+
+| 类名                    | 字重 | 字体族           | 对应文件             |
+| ----------------------- | ---- | ---------------- | -------------------- |
+| `font-poppins-light`    | 300  | Poppins-Light    | Poppins-Light.ttf    |
+| `font-poppins-regular`  | 400  | Poppins-Regular  | Poppins-Regular.ttf  |
+| `font-poppins-medium`   | 500  | Poppins-Medium   | Poppins-Medium.ttf   |
+| `font-poppins-semibold` | 600  | Poppins-SemiBold | Poppins-SemiBold.ttf |
+| `font-poppins-bold`     | 700  | Poppins-Bold     | Poppins-Bold.ttf     |
+
+### 使用方法
+
+```jsx
+// 基本使用
+<div className="font-poppins-light">轻字重文本</div>
+<div className="font-poppins-regular">常规字重文本</div>
+<div className="font-poppins-medium">中等字重文本</div>
+<div className="font-poppins-semibold">半粗字重文本</div>
+<div className="font-poppins-bold">粗字重文本</div>
+
+// 结合 vw 字体大小使用
+<div className="text-[32vw] font-poppins-semibold">
+  大标题文本
+</div>
+
+<div className="text-[16vw] font-poppins-regular">
+  正文内容
+</div>
+```
+
+### 技术实现
+
+- **独立字体族**：每个字重使用独立的 `font-family` 名称
+- **精确控制**：直接加载对应的字体文件，避免字重回退
+- **性能优化**：使用 `font-display: swap` 优化加载
+- **Fallback 支持**：包含 `system-ui, sans-serif` 作为备用字体
 
 ## 多语言使用
 

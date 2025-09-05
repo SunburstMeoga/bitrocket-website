@@ -44,7 +44,7 @@ const DataDisplay = () => {
             {/* 数值部分 */}
             <div className="flex items-baseline justify-center mb-[16vw]">
               <span
-                className="text-[48vw] font-semibold"
+                className="text-[48vw] font-poppins-semibold"
                 style={{
                   background: 'linear-gradient(45deg, #F3D5BB 0%, #A77F5C 100%)',
                   WebkitBackgroundClip: 'text',
@@ -55,7 +55,7 @@ const DataDisplay = () => {
                 {item.value}
               </span>
               <span
-                className="text-[24vw] font-semibold ml-[4vw]"
+                className="text-[24vw] font-poppins-semibold ml-[4vw]"
                 style={{
                   background: 'linear-gradient(45deg, #F3D5BB 0%, #A77F5C 100%)',
                   WebkitBackgroundClip: 'text',
@@ -68,7 +68,7 @@ const DataDisplay = () => {
             </div>
 
             {/* 描述文案部分 */}
-            <div className="text-white text-[16vw] font-semibold text-center">
+            <div className="text-white text-[16vw] font-poppins-semibold text-center">
               {item.description}
             </div>
           </div>

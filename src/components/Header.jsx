@@ -106,7 +106,7 @@ const Header = () => {
                 className="flex items-center text-white hover:text-gray-300 transition-colors gap-[8vw]"
               >
                 <LanguageIcon className="w-[18vw] h-[18vw]" />
-                <span className="text-[14vw] font-semibold">
+                <span className="text-[14vw] font-poppins-semibold">
                   {currentLanguage === 'en' ? 'Eng' : currentLanguage === 'zh' ? '中文' : '한국어'}
                 </span>
                 <DropdownIcon className="w-[6vw] h-[3vw]" isOpen={isLanguageDropdownOpen} />
@@ -120,7 +120,7 @@ const Header = () => {
                   <button
                     key={lang.code}
                     onClick={() => toggleLanguage(lang.code)}
-                    className="block w-full text-left py-[3vw] text-white hover:bg-gray-800 transition-colors text-[11vw] font-semibold h-[48vw] flex items-center px-[18vw]"
+                    className="block w-full text-left py-[3vw] text-white hover:bg-gray-800 transition-colors text-[11vw] font-poppins-semibold h-[48vw] flex items-center px-[18vw]"
                   >
                     {lang.label}
                   </button>
@@ -145,7 +145,7 @@ const Header = () => {
                   <a
                     key={item}
                     href={`#${item.toLowerCase().replace(' ', '-')}`}
-                    className="block text-white hover:bg-gray-800 transition-colors text-[11vw] font-semibold h-[48vw] flex items-center px-[18vw]"
+                    className="block text-white hover:bg-gray-800 transition-colors text-[11vw] font-poppins-semibold h-[48vw] flex items-center px-[18vw]"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item}
@@ -173,7 +173,7 @@ const Header = () => {
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(' ', '-')}`}
-                className="text-white hover:text-gray-300 transition-colors text-[11vw] font-semibold whitespace-nowrap"
+                className="text-white hover:text-gray-300 transition-colors text-[11vw] font-poppins-semibold whitespace-nowrap"
               >
                 {item}
               </a>
@@ -187,7 +187,7 @@ const Header = () => {
               className="flex items-center text-white hover:text-gray-300 transition-colors gap-[8vw]"
             >
               <LanguageIcon className="w-[18vw] h-[18vw]" />
-              <span className="text-[11vw] font-semibold">
+              <span className="text-[11vw] font-poppins-semibold">
                 {currentLanguage === 'en' ? 'Eng' : currentLanguage === 'zh' ? '中文' : '한국어'}
               </span>
               <DropdownIcon className="w-[6vw] h-[3vw]" isOpen={isLanguageDropdownOpen} />
@@ -201,7 +201,7 @@ const Header = () => {
                 <button
                   key={lang.code}
                   onClick={() => toggleLanguage(lang.code)}
-                  className="block w-full text-left py-[12vw] text-white hover:bg-gray-800 transition-colors text-[11vw] font-semibold h-[48vw] flex items-center px-[18vw]"
+                  className="block w-full text-left py-[12vw] text-white hover:bg-gray-800 transition-colors text-[11vw] font-poppins-semibold h-[48vw] flex items-center px-[18vw]"
                 >
                   {lang.label}
                 </button>
@@ -227,7 +227,7 @@ const Header = () => {
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(' ', '-')}`}
-                className="text-white hover:text-gray-300 transition-colors text-[20vw] font-semibold whitespace-nowrap"
+                className="text-white hover:text-gray-300 transition-colors text-[20vw] font-poppins-semibold whitespace-nowrap"
               >
                 {item}
               </a>
@@ -241,7 +241,7 @@ const Header = () => {
               className="flex items-center text-white hover:text-gray-300 transition-colors gap-[8vw]"
             >
               <LanguageIcon className="w-[32vw] h-[32vw]" />
-              <span className="text-[20vw] font-semibold">
+              <span className="text-[20vw] font-poppins-semibold">
                 {currentLanguage === 'en' ? 'Eng' : currentLanguage === 'zh' ? '中文' : '한국어'}
               </span>
               <DropdownIcon className="w-[13vw] h-[7vw]" isOpen={isLanguageDropdownOpen} />
@@ -255,7 +255,7 @@ const Header = () => {
                 <button
                   key={lang.code}
                   onClick={() => toggleLanguage(lang.code)}
-                  className="block w-full text-left py-[12vw] text-white hover:bg-gray-800 transition-colors text-[20vw] font-semibold h-[48vw] flex items-center px-[18vw]"
+                  className="block w-full text-left py-[12vw] text-white hover:bg-gray-800 transition-colors text-[20vw] font-poppins-semibold h-[48vw] flex items-center px-[18vw]"
                 >
                   {lang.label}
                 </button>
