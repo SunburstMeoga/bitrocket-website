@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Poppins字体引入 */
 @font-face {
@@ -41,239 +43,41 @@
   font-display: swap;
 }
 
-@theme {
-  /* 响应式断点配置 */
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
 
-  /* 字体配置 */
-  --font-family-sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-}
 
-/* 响应式基准宽度CSS变量 */
-:root {
-  --base-width: 390;
-}
+/* 响应式基准宽度CSS变量和所有vw类由插件自动生成 */
 
-@media (min-width: 1024px) {
-  :root {
-    --base-width: 1024;
-  }
-}
-
-@media (min-width: 1280px) {
-  :root {
-    --base-width: 1280;
-  }
-}
-
-/* 自定义vw工具类 - 使用!important覆盖Tailwind默认类 */
+/* 覆盖Tailwind默认的任意值处理，确保我们的vw计算优先 */
 @layer utilities {
-  /* 字体大小 */
-  .text-\[14vw\] {
-    font-size: calc(14 * 100vw / var(--base-width)) !important;
-  }
-  .text-\[16vw\] {
-    font-size: calc(16 * 100vw / var(--base-width)) !important;
-  }
-  .text-\[18vw\] {
-    font-size: calc(18 * 100vw / var(--base-width)) !important;
-  }
-  .text-\[20vw\] {
-    font-size: calc(20 * 100vw / var(--base-width)) !important;
-  }
-  .text-\[24vw\] {
-    font-size: calc(24 * 100vw / var(--base-width)) !important;
-  }
-  .text-\[28vw\] {
-    font-size: calc(28 * 100vw / var(--base-width)) !important;
-  }
-  .text-\[32vw\] {
-    font-size: calc(32 * 100vw / var(--base-width)) !important;
-  }
-  .text-\[36vw\] {
-    font-size: calc(36 * 100vw / var(--base-width)) !important;
-  }
-  .text-\[48vw\] {
-    font-size: calc(48 * 100vw / var(--base-width)) !important;
-  }
-  .text-\[64vw\] {
-    font-size: calc(64 * 100vw / var(--base-width)) !important;
-  }
-
-  /* 宽度 */
-  .w-\[100vw\] {
-    width: calc(100 * 100vw / var(--base-width)) !important;
-  }
+  /* 强制覆盖宽度 */
   .w-\[120vw\] {
     width: calc(120 * 100vw / var(--base-width)) !important;
   }
-  .w-\[150vw\] {
-    width: calc(150 * 100vw / var(--base-width)) !important;
+  .w-\[26vw\] {
+    width: calc(26 * 100vw / var(--base-width)) !important;
   }
-  .w-\[200vw\] {
-    width: calc(200 * 100vw / var(--base-width)) !important;
+  .w-\[94vw\] {
+    width: calc(94 * 100vw / var(--base-width)) !important;
   }
-  .w-\[280vw\] {
-    width: calc(280 * 100vw / var(--base-width)) !important;
+  .w-\[58vw\] {
+    width: calc(58 * 100vw / var(--base-width)) !important;
   }
-  .w-\[300vw\] {
-    width: calc(300 * 100vw / var(--base-width)) !important;
-  }
-  .w-\[356vw\] {
-    width: calc(356 * 100vw / var(--base-width)) !important;
-  }
-  .w-\[362vw\] {
-    width: calc(362 * 100vw / var(--base-width)) !important;
-  }
-  .w-\[928vw\] {
-    width: calc(928 * 100vw / var(--base-width)) !important;
-  }
-  .w-\[1740vw\] {
-    width: calc(1740 * 100vw / var(--base-width)) !important;
+  .w-\[176vw\] {
+    width: calc(176 * 100vw / var(--base-width)) !important;
   }
 
-  /* 高度 */
-  .h-\[24vw\] {
-    height: calc(24 * 100vw / var(--base-width)) !important;
-  }
+  /* 强制覆盖高度 */
   .h-\[26vw\] {
     height: calc(26 * 100vw / var(--base-width)) !important;
-  }
-  .h-\[30vw\] {
-    height: calc(30 * 100vw / var(--base-width)) !important;
-  }
-  .h-\[32vw\] {
-    height: calc(32 * 100vw / var(--base-width)) !important;
-  }
-  .h-\[38vw\] {
-    height: calc(38 * 100vw / var(--base-width)) !important;
-  }
-  .h-\[48vw\] {
-    height: calc(48 * 100vw / var(--base-width)) !important;
-  }
-  .h-\[50vw\] {
-    height: calc(50 * 100vw / var(--base-width)) !important;
   }
   .h-\[58vw\] {
     height: calc(58 * 100vw / var(--base-width)) !important;
   }
-  .h-\[60vw\] {
-    height: calc(60 * 100vw / var(--base-width)) !important;
-  }
   .h-\[94vw\] {
     height: calc(94 * 100vw / var(--base-width)) !important;
   }
-  .h-\[100vw\] {
-    height: calc(100 * 100vw / var(--base-width)) !important;
-  }
   .h-\[176vw\] {
     height: calc(176 * 100vw / var(--base-width)) !important;
-  }
-  .h-\[200vw\] {
-    height: calc(200 * 100vw / var(--base-width)) !important;
-  }
-  .h-\[300vw\] {
-    height: calc(300 * 100vw / var(--base-width)) !important;
-  }
-  .h-\[797vw\] {
-    height: calc(797 * 100vw / var(--base-width)) !important;
-  }
-
-  /* 内边距 */
-  .p-\[8vw\] {
-    padding: calc(8 * 100vw / var(--base-width)) !important;
-  }
-  .p-\[16vw\] {
-    padding: calc(16 * 100vw / var(--base-width)) !important;
-  }
-  .p-\[20vw\] {
-    padding: calc(20 * 100vw / var(--base-width)) !important;
-  }
-  .p-\[24vw\] {
-    padding: calc(24 * 100vw / var(--base-width)) !important;
-  }
-  .p-\[32vw\] {
-    padding: calc(32 * 100vw / var(--base-width)) !important;
-  }
-
-  /* 外边距 */
-  .m-\[16vw\] {
-    margin: calc(16 * 100vw / var(--base-width)) !important;
-  }
-  .mt-\[8vw\] {
-    margin-top: calc(8 * 100vw / var(--base-width)) !important;
-  }
-  .mt-\[18vw\] {
-    margin-top: calc(18 * 100vw / var(--base-width)) !important;
-  }
-  .mt-\[93vw\] {
-    margin-top: calc(93 * 100vw / var(--base-width)) !important;
-  }
-  .mb-\[8vw\] {
-    margin-bottom: calc(8 * 100vw / var(--base-width)) !important;
-  }
-  .mb-\[12vw\] {
-    margin-bottom: calc(12 * 100vw / var(--base-width)) !important;
-  }
-  .mb-\[16vw\] {
-    margin-bottom: calc(16 * 100vw / var(--base-width)) !important;
-  }
-  .mb-\[24vw\] {
-    margin-bottom: calc(24 * 100vw / var(--base-width)) !important;
-  }
-  .mb-\[32vw\] {
-    margin-bottom: calc(32 * 100vw / var(--base-width)) !important;
-  }
-
-  /* 间距 */
-  .gap-\[8vw\] {
-    gap: calc(8 * 100vw / var(--base-width)) !important;
-  }
-  .gap-\[12vw\] {
-    gap: calc(12 * 100vw / var(--base-width)) !important;
-  }
-  .gap-\[16vw\] {
-    gap: calc(16 * 100vw / var(--base-width)) !important;
-  }
-
-  /* 圆角 */
-  .rounded-\[4vw\] {
-    border-radius: calc(4 * 100vw / var(--base-width)) !important;
-  }
-  .rounded-\[8vw\] {
-    border-radius: calc(8 * 100vw / var(--base-width)) !important;
-  }
-  .rounded-\[11vw\] {
-    border-radius: calc(11 * 100vw / var(--base-width)) !important;
-  }
-  .rounded-\[12vw\] {
-    border-radius: calc(12 * 100vw / var(--base-width)) !important;
-  }
-
-  /* 内边距变体 */
-  .px-\[12vw\] {
-    padding-left: calc(12 * 100vw / var(--base-width)) !important;
-    padding-right: calc(12 * 100vw / var(--base-width)) !important;
-  }
-  .px-\[32vw\] {
-    padding-left: calc(32 * 100vw / var(--base-width)) !important;
-    padding-right: calc(32 * 100vw / var(--base-width)) !important;
-  }
-  .py-\[6vw\] {
-    padding-top: calc(6 * 100vw / var(--base-width)) !important;
-    padding-bottom: calc(6 * 100vw / var(--base-width)) !important;
-  }
-
-  /* 行高 */
-  .leading-\[29vw\] {
-    line-height: calc(29 * 100vw / var(--base-width)) !important;
-  }
-  .leading-\[58vw\] {
-    line-height: calc(58 * 100vw / var(--base-width)) !important;
-  }
-  .leading-\[79vw\] {
-    line-height: calc(79 * 100vw / var(--base-width)) !important;
   }
 }
 
@@ -290,13 +94,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* 确保所有元素都使用Poppins字体 */
-* {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
 }
 
 #root {

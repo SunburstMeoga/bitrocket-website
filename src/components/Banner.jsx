@@ -6,6 +6,7 @@ const Banner = () => {
 
   return (
     <section className="relative w-full h-[797px] lg:hidden overflow-hidden">
+      
       {/* 背景图片 */}
       <div className="absolute bottom-0 left-0 w-full">
         <img

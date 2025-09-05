@@ -1,7 +1,7 @@
-import vwPlugin from './src/utils/tailwind-vw-plugin.js'
+const vwPlugin = require('./src/utils/tailwind-vw-plugin.js')
 
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",

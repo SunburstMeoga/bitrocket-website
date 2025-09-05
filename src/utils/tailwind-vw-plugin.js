@@ -1,6 +1,6 @@
-import plugin from 'tailwindcss/plugin'
+const plugin = require('tailwindcss/plugin')
 
-// 设计稿基准宽度配置
+// 设计稿基准宽度配置 - 注意：这些值在CSS变量中不能包含单位
 const baseWidths = {
   mobile: 390,  // 手机端基准宽度
   pad: 1024,    // pad端基准宽度
@@ -8,14 +8,14 @@ const baseWidths = {
 }
 
 // vw函数 - 使用CSS calc和变量来动态计算
+// w-[120vw] 表示 calc(120 * 100vw / var(--base-width))
 function vw(px) {
   return `calc(${px} * 100vw / var(--base-width))`
 }
 
-// 创建通用的值处理函数（支持负数）
+// 创建通用的值处理函数（支持任意数字vw值）
 function createValueHandler(cssProperty) {
   return (value) => {
-    console.log(`Processing ${cssProperty}: ${value}`)
     if (typeof value !== 'string') {
       return { [cssProperty]: value }
     }
@@ -23,10 +23,8 @@ function createValueHandler(cssProperty) {
     const match = value.match(/^(-?\d+(?:\.\d+)?)vw$/)
     if (match) {
       const pxValue = parseFloat(match[1])
-      const result = vw(pxValue)
-      console.log(`Converted ${value} to ${result}`)
       return {
-        [cssProperty]: result
+        [cssProperty]: vw(pxValue)
       }
     }
     return {
@@ -36,34 +34,36 @@ function createValueHandler(cssProperty) {
 }
 
 // 自定义 vw 插件
-const vwPlugin = plugin(function({ matchUtilities, theme, addBase }) {
+const vwPlugin = plugin(function({ addBase, addUtilities, matchUtilities, theme }) {
   console.log('VW Plugin loaded!')
 
   // 添加CSS变量定义
   addBase({
     ':root': {
-      '--base-width': baseWidths.mobile
+      '--base-width': `${baseWidths.mobile}`
     },
-    [`@media (min-width: ${theme('screens.lg')})`]: {
+    '@media (min-width: 1024px)': {
       ':root': {
-        '--base-width': baseWidths.pad
+        '--base-width': `${baseWidths.pad}`
       }
     },
-    [`@media (min-width: ${theme('screens.xl')})`]: {
+    '@media (min-width: 1280px)': {
       ':root': {
-        '--base-width': baseWidths.pc
+        '--base-width': `${baseWidths.pc}`
       }
     }
   })
 
   console.log('CSS variables added')
 
+  // 使用 matchUtilities 来支持任意 vw 值的动态生成
   // 处理宽度 w-[数字vw]
   matchUtilities(
     {
       'w': createValueHandler('width'),
     },
     {
+      values: theme('width'),
       type: ['length', 'percentage']
     }
   )
@@ -74,92 +74,30 @@ const vwPlugin = plugin(function({ matchUtilities, theme, addBase }) {
       'h': createValueHandler('height'),
     },
     {
+      values: theme('height'),
       type: ['length', 'percentage']
     }
   )
 
-  // 处理字体大小
+  // 处理字体大小 text-[数字vw] - 使用更高优先级的方式
   matchUtilities(
     {
       'text': createValueHandler('font-size'),
-      'text-size': createValueHandler('font-size'),
-      'font-size': createValueHandler('font-size'),
     },
     {
+      values: theme('fontSize'),
       type: ['length', 'percentage']
     }
   )
 
-  // 处理行高
+  // 处理行高 leading-[数字vw]
   matchUtilities(
     {
       'leading': createValueHandler('line-height'),
     },
     {
+      values: theme('lineHeight'),
       type: ['length', 'percentage']
-    }
-  )
-
-  // 处理字体间距
-  matchUtilities(
-    {
-      'tracking': createValueHandler('letter-spacing'),
-    },
-    {
-      type: ['length', 'percentage']
-    }
-  )
-
-  // 处理定位相关
-  matchUtilities(
-    {
-      'top': createValueHandler('top'),
-      'right': createValueHandler('right'),
-      'bottom': createValueHandler('bottom'),
-      'left': createValueHandler('left'),
-      'inset': createValueHandler('inset'),
-    },
-    {
-      type: ['length', 'percentage'],
-      supportsNegativeValues: true
-    }
-  )
-
-  // 处理最大最小宽高
-  matchUtilities(
-    {
-      'min-w': createValueHandler('min-width'),
-      'max-w': createValueHandler('max-width'),
-      'min-h': createValueHandler('min-height'),
-      'max-h': createValueHandler('max-height'),
-    },
-    {
-      type: ['length', 'percentage']
-    }
-  )
-
-  // 处理阴影和模糊相关
-  matchUtilities(
-    {
-      'blur': createValueHandler('filter'),
-      'backdrop-blur': createValueHandler('backdrop-filter'),
-    },
-    {
-      type: ['length']
-    }
-  )
-
-  // 处理变换相关
-  matchUtilities(
-    {
-      'translate-x': createValueHandler('transform'),
-      'translate-y': createValueHandler('transform'),
-      'scale': createValueHandler('transform'),
-      'rotate': createValueHandler('transform'),
-    },
-    {
-      type: ['length', 'percentage'],
-      supportsNegativeValues: true
     }
   )
 
@@ -187,6 +125,7 @@ const vwPlugin = plugin(function({ matchUtilities, theme, addBase }) {
       'pl': createValueHandler('padding-left'),
     },
     {
+      values: theme('padding'),
       type: ['length', 'percentage']
     }
   )
@@ -215,6 +154,7 @@ const vwPlugin = plugin(function({ matchUtilities, theme, addBase }) {
       'ml': createValueHandler('margin-left'),
     },
     {
+      values: theme('margin'),
       type: ['length', 'percentage'],
       supportsNegativeValues: true
     }
@@ -225,14 +165,36 @@ const vwPlugin = plugin(function({ matchUtilities, theme, addBase }) {
     {
       'gap': createValueHandler('gap'),
       'rounded': createValueHandler('border-radius'),
-      'border': createValueHandler('border-width'),
+      'top': createValueHandler('top'),
+      'right': createValueHandler('right'),
+      'bottom': createValueHandler('bottom'),
+      'left': createValueHandler('left'),
     },
     {
+      values: theme('spacing'),
       type: ['length', 'percentage']
     }
   )
 
+  // 特殊处理：覆盖 text-[数字vw] 的默认行为，使其应用到 font-size 而不是 color
+  // 这需要在最后执行，以覆盖 Tailwind 的默认处理
+  const textVwUtilities = {}
+
+  // 生成常用的字体大小 vw 值
+  const fontSizes = [11, 14, 16, 17, 18, 20, 24, 28, 32, 36, 48, 64]
+  fontSizes.forEach(size => {
+    textVwUtilities[`.text-\\[${size}vw\\]`] = {
+      'font-size': `calc(${size} * 100vw / var(--base-width)) !important`
+    }
+  })
+
+  // 添加这些工具类，使用高优先级覆盖默认行为
+  addUtilities(textVwUtilities, { respectPrefix: false, respectImportant: false })
+
+  console.log('Dynamic vw utilities configured - any [数字vw] value will be automatically generated!')
+  console.log(`Generated ${Object.keys(textVwUtilities).length} text-[数字vw] font-size utilities`)
 })
 
-export default vwPlugin
-export { baseWidths, vw }
+module.exports = vwPlugin
+module.exports.baseWidths = baseWidths
+module.exports.vw = vw

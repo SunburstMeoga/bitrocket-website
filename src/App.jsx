@@ -11,7 +11,8 @@ function App() {
       <Header />
 
       {/* 主要内容 - 添加顶部间距以避免被固定头部遮挡 */}
-      <main className="pt-[58vw] lg:pt-[94vw] xl:pt-[176vw] min-h-screen">
+      <main className="min-h-screen">
+        <div className='w-[12vw] h-[12vw] border border-red-500' ></div>
         {/* Banner区域 - 仅在手机端显示 */}
         <Banner />
 
