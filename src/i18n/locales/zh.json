@@ -15,5 +15,10 @@
     "description": "仅需一分钟预测BTC价格趋势，质押USDR获得每日收益，通过社区建设赚取无限奖励。",
     "get_started": "开始使用",
     "liquidity_info": "Aave当前提供670.4亿美元流动性。"
+  },
+  "dataDisplay": {
+    "dailyActiveUsers": "日活跃用户",
+    "totalStake": "总质押量",
+    "paymentProcessed": "已处理支付"
   }
 }

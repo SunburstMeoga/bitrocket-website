@@ -15,5 +15,10 @@
     "description": "단 1분 만에 BTC 가격 동향을 예측하고, USDR을 스테이킹하여 일일 수익을 얻으며, 커뮤니티 구축을 통해 무제한 보상을 획득하세요.",
     "get_started": "시작하기",
     "liquidity_info": "현재 Aave에서 672.4억 달러의 유동성이 공급되고 있습니다."
+  },
+  "dataDisplay": {
+    "dailyActiveUsers": "일일 활성 사용자",
+    "totalStake": "총 스테이킹",
+    "paymentProcessed": "처리된 결제"
   }
 }

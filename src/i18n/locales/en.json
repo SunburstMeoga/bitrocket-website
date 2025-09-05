@@ -15,5 +15,10 @@
     "description": "Predict BTC price trends in just one minute, stake USDR to reap daily returns, and earn unlimited rewards through community building.",
     "get_started": "Get Started",
     "liquidity_info": "$67.24 billion of liquidity currently supplied in Aave."
+  },
+  "dataDisplay": {
+    "dailyActiveUsers": "Daily active users",
+    "totalStake": "Total stake",
+    "paymentProcessed": "Payment processed"
   }
 }

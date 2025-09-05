@@ -79,6 +79,18 @@
 <div class="left-[12vw]">左侧定位 12vw</div>
 ```
 
+### 响应式显示与渐变背景
+
+```html
+<!-- 仅手机端显示的底部渐变div -->
+<div
+  class="absolute bottom-0 left-0 w-full h-[166vw] lg:hidden"
+  style="background: linear-gradient(180deg, rgba(25, 25, 25, 0) 0%, #191919 100%)"
+>
+  渐变背景div，仅在手机端显示
+</div>
+```
+
 ## 计算原理
 
 所有的 vw 值都会被转换为：`calc(数字 * 100vw / var(--base-width))`

@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import Header from './components/Header'
 import Banner from './components/Banner'
+import DataDisplay from './components/DataDisplay'
 
 function App() {
   const { t } = useTranslation()
@@ -14,6 +15,9 @@ function App() {
       <main className="min-h-screen">
         {/* Banner区域 - 仅在手机端显示 */}
         <Banner />
+
+        {/* 数据展示区域 - 仅在手机端显示 */}
+        <DataDisplay />
 
         {/* 其他内容区域 */}
         <div className="text-center py-[40vw] px-[16vw] hidden lg:block">
