@@ -84,7 +84,7 @@ const Header = () => {
   }
 
   return (
-    <header className="w-full h-[58vw] lg:h-[94vw] xl:h-[176vw] fixed top-0 left-0 z-50 shadow-lg">
+    <header className="bg-[#191919]  w-full h-[58vw] lg:h-[94vw] xl:h-[176vw] fixed top-0 left-0 z-50 shadow-lg">
       <div className="w-full flex justify-center">
         {/* Mobile Layout */}
         <div className="w-[362vw] h-[58vw] flex items-center justify-between lg:hidden">
