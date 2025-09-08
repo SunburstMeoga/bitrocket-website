@@ -89,5 +89,26 @@
     "title": "예측하고, 스테이킹하고, 수익을 얻을 준비가 되셨나요?",
     "description": "간단하고, 빠르며, 높은 보상 - 블록체인 투명성과 중앙화된 효율성으로 구동",
     "startNow": "지금 시작"
+  },
+  "footer": {
+    "aboutUs": {
+      "title": "회사 소개",
+      "companyProfile": "회사 프로필",
+      "teamProfile": "팀 프로필",
+      "contactUs": "문의하기"
+    },
+    "productsAndServices": {
+      "title": "제품 및 서비스",
+      "predictionMarket": "예측 시장",
+      "stakingSystem": "스테이킹 시스템",
+      "vipLevels": "VIP 레벨"
+    },
+    "helpCenter": {
+      "title": "도움말 센터",
+      "beginnersGuide": "초보자 가이드",
+      "faq": "자주 묻는 질문",
+      "fees": "수수료"
+    },
+    "copyright": "© {{year}} Bitrocket - 모든 권리 보유"
   }
 }

@@ -89,5 +89,26 @@
     "title": "Ready to predict,stake,and earn?",
     "description": "Simple,fast,and highly rewarding – powered by blockchain transparency and centralized efficiency",
     "startNow": "Start Now"
+  },
+  "footer": {
+    "aboutUs": {
+      "title": "About Us",
+      "companyProfile": "Company Profile",
+      "teamProfile": "Team Profile",
+      "contactUs": "Contact Us"
+    },
+    "productsAndServices": {
+      "title": "Products and Services",
+      "predictionMarket": "Prediction Market",
+      "stakingSystem": "Staking System",
+      "vipLevels": "VIP Levels"
+    },
+    "helpCenter": {
+      "title": "Help Center",
+      "beginnersGuide": "Beginner's Guide",
+      "faq": "FAQ",
+      "fees": "Fees"
+    },
+    "copyright": "© {{year}} Bitrocket - All rights reserved"
   }
 }

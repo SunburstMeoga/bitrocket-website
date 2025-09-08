@@ -89,5 +89,26 @@
     "title": "准备好预测、质押和赚取收益了吗？",
     "description": "简单、快速、高回报 - 由区块链透明度和中心化效率驱动",
     "startNow": "立即开始"
+  },
+  "footer": {
+    "aboutUs": {
+      "title": "关于我们",
+      "companyProfile": "公司简介",
+      "teamProfile": "团队简介",
+      "contactUs": "联系我们"
+    },
+    "productsAndServices": {
+      "title": "产品与服务",
+      "predictionMarket": "预测市场",
+      "stakingSystem": "质押系统",
+      "vipLevels": "VIP等级"
+    },
+    "helpCenter": {
+      "title": "帮助中心",
+      "beginnersGuide": "新手指南",
+      "faq": "常见问题",
+      "fees": "费用说明"
+    },
+    "copyright": "© {{year}} Bitrocket - 版权所有"
   }
 }

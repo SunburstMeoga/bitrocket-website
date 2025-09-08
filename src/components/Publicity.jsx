@@ -36,7 +36,7 @@ const Publicity = () => {
           {/* Start Now 按钮 */}
           <div className="mt-[100vw] lg:mt-[60vw] xl:mt-[80vw] flex justify-center">
             <div className="bg-[#159360] w-[328vw] lg:w-[240vw] xl:w-[320vw] h-[82vw] lg:h-[60vw] xl:h-[80vw] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#138a56] transition-colors">
-              <span className="text-white text-[28vw] lg:text-[20vw] xl:text-[24vw] font-poppins-medium leading-[24vw] lg:leading-[18vw] xl:leading-[22vw] tracking-[-3vw] lg:tracking-[-2vw] xl:tracking-[-2.5vw]">
+              <span className="text-white text-[28vw] lg:text-[20vw] xl:text-[24vw] font-poppins-medium leading-[24vw] lg:leading-[18vw] xl:leading-[22vw]  lg:tracking-[-2vw] xl:tracking-[-2.5vw]">
                 {t('publicity.startNow')}
               </span>
             </div>

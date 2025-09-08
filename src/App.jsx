@@ -6,6 +6,7 @@ import LatestNews from './components/LatestNews'
 import OfficialAnnouncement from './components/OfficialAnnouncement'
 import WhitePaper from './components/WhitePaper'
 import Publicity from './components/Publicity'
+import Footer from './components/Footer'
 
 function App() {
   const { t } = useTranslation()
@@ -50,6 +51,9 @@ function App() {
           </div>
         </div>
       </main>
+
+      {/* Footer区域 - 在所有设备上显示 */}
+      <Footer />
     </div>
   )
 }
