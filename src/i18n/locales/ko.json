@@ -20,5 +20,29 @@
     "dailyActiveUsers": "일일 활성 사용자",
     "totalStake": "총 스테이킹",
     "paymentProcessed": "처리된 결제"
+  },
+  "officialAnnouncement": {
+    "title": {
+      "official": "공식",
+      "announcement": "공지사항"
+    },
+    "announcements": {
+      "usdrToken": {
+        "title": "USDR 토큰 BSC 상장",
+        "description": "USDR이 이제 바이낸스 스마트 체인에서 사용 가능합니다! BEP-20 표준을 완전히 준수하며 투명한 발행 및 전송을 지원합니다. USDT 준비금으로 뒷받침되어 1:1 상환 가능합니다.",
+        "features": [
+          "원활한 스왑: 앱 내 USDT에서 USDR로 언제든지 출금: 온체인",
+          "자동 검토 지원을 통한 체인 출금"
+        ]
+      },
+      "stakingExit": {
+        "title": "스테이킹 종료 메커니즘 업데이트",
+        "description": "스테이킹 보상이 3배에 도달했나요? 원클릭 재투자로 자동으로 계속 수익을 얻으세요. 중단 없이 - 오직 성장만!",
+        "features": [
+          "VIP 특권: 높은 등급은 우선 재투자 보너스를 받습니다",
+          "공정한 플레이: 모든 계산은 온체인에서 검증 가능합니다"
+        ]
+      }
+    }
   }
 }

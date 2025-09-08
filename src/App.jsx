@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Banner from './components/Banner'
 import DataDisplay from './components/DataDisplay'
 import LatestNews from './components/LatestNews'
+import OfficialAnnouncement from './components/OfficialAnnouncement'
 
 function App() {
   const { t } = useTranslation()
@@ -22,6 +23,9 @@ function App() {
 
         {/* Latest News区域 - 仅在手机端显示 */}
         <LatestNews />
+
+        {/* Official Announcement区域 - 仅在手机端显示 */}
+        <OfficialAnnouncement />
 
         {/* 其他内容区域 */}
         <div className="text-center py-[40vw] px-[16vw] hidden lg:block">

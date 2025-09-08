@@ -20,5 +20,29 @@
     "dailyActiveUsers": "Daily active users",
     "totalStake": "Total stake",
     "paymentProcessed": "Payment processed"
+  },
+  "officialAnnouncement": {
+    "title": {
+      "official": "Official",
+      "announcement": "Announcement"
+    },
+    "announcements": {
+      "usdrToken": {
+        "title": "USDR token listed on BSC",
+        "description": "USDR is now available on Binance Smart Chain! Fully compliant with the BEP-20 standard, it supports transparent minting and transfers. Backed by USDT reserves, it's 1:1 redeemable.",
+        "features": [
+          "Seamless swaps: In-app USDT to USDR Anytime withdrawals: On-",
+          "chain withdrawals with automated review support"
+        ]
+      },
+      "stakingExit": {
+        "title": "Update on the staking exit mechanism",
+        "description": "Reached 3x your staked rewards? Continue earning automatically with one-click reinvesting. No interruptions – only growth!",
+        "features": [
+          "VIP Privileges: Higher tiers receive priority reinvestment bonuses",
+          "Fair Play: All calculations are verifiable on-chain"
+        ]
+      }
+    }
   }
 }
