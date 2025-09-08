@@ -32,15 +32,18 @@ const OfficialAnnouncement = () => {
           />
 
           {/* 标题文案 */}
-          <div className="absolute top-0 left-0 w-full h-full flex items-center">
-            <div className="w-[332vw] ml-[29vw]">
+          <div className="absolute top-0 left-0 w-full h-full flex items-center px-[29vw]">
+            <div className="w-full max-w-[332vw]">
               <h2
-                className="text-[48vw] font-poppins-medium leading-[61vw] tracking-[-0.05vw]"
+                className="text-[48vw] font-poppins-medium leading-[61vw] tracking-[-0.05vw] break-words overflow-wrap-anywhere hyphens-auto"
                 style={{
                   background: 'linear-gradient(-71deg, #75513D 0%, #F3D5BB 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text'
+                  backgroundClip: 'text',
+                  wordBreak: 'break-word',
+                  overflowWrap: 'break-word',
+                  hyphens: 'auto'
                 }}
               >
                 <div>{t('officialAnnouncement.title.official')}</div>
@@ -55,11 +58,18 @@ const OfficialAnnouncement = () => {
           {announcements.map((announcement) => (
             <div
               key={announcement.id}
-              className="w-full bg-[#252525] py-[24vw] flex justify-center"
+              className="w-full bg-[#252525] py-[24vw] flex justify-center px-[29vw]"
             >
-              <div className="w-[332vw]">
+              <div className="w-full max-w-[332vw]">
                 {/* 卡片标题 */}
-                <h3 className="text-white text-[24vw] font-poppins-medium leading-[29vw] tracking-[0.03vw] mb-[22vw]">
+                <h3
+                  className="text-white text-[24vw] font-poppins-medium leading-[29vw] tracking-[0.03vw] mb-[22vw] break-words overflow-wrap-anywhere hyphens-auto"
+                  style={{
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    hyphens: 'auto'
+                  }}
+                >
                   {t(announcement.titleKey)}
                 </h3>
 

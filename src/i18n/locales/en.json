@@ -12,7 +12,7 @@
   "banner": {
     "title_part1": "Revolutionize your",
     "title_part2": "cryptocur-rency experience",
-    "description": "Predict BTC price trends in just one minute, stake USDR to reap daily returns, and earn unlimited rewards through community building.",
+    "description": "Predict BTC price trends in just one minute,stake USDR to reap daily returns,and earn unlimited rewards through community building.",
     "get_started": "Get Started",
     "liquidity_info": "$67.24 billion of liquidity currently supplied in Aave."
   },
@@ -29,7 +29,7 @@
     "announcements": {
       "usdrToken": {
         "title": "USDR token listed on BSC",
-        "description": "USDR is now available on Binance Smart Chain! Fully compliant with the BEP-20 standard, it supports transparent minting and transfers. Backed by USDT reserves, it's 1:1 redeemable.",
+        "description": "USDR is now available on Binance Smart Chain! Fully compliant with the BEP-20 standard,it supports transparent minting and transfers. Backed by USDT reserves,it's 1:1 redeemable.",
         "features": [
           "Seamless swaps: In-app USDT to USDR Anytime withdrawals: On-",
           "chain withdrawals with automated review support"
@@ -59,7 +59,7 @@
       },
       "luckyUsdAirdrop": {
         "title": "LuckyUSD daily airdrop increases",
-        "description": "Get 50 LuckyUSD for free every day to practice betting now – no risk, all fun!"
+        "description": "Get 50 LuckyUSD for free every day to practice betting now – no risk,all fun!"
       }
     }
   },
@@ -69,20 +69,25 @@
       "download": "Download",
       "readOnline": "Read Online"
     },
-    "description": "Learn more about our prediction market, USDR token economics, VIP system, and rewards mechanism.",
+    "description": "Learn more about our prediction market,USDR token economics,VIP system,and rewards mechanism.",
     "features": {
       "coreFeatures": {
         "title": "Core Features:",
-        "description": "1-minute BTC predictions, 1% daily staking returns"
+        "description": "1-minute BTC predictions,1% daily staking returns"
       },
       "tokenLiquidity": {
         "title": "Token Liquidity:",
-        "description": "USDR for staking, staking, and withdrawals"
+        "description": "USDR for staking,staking,and withdrawals"
       },
       "security": {
         "title": "Security:",
         "description": "Hybrid model ensures speed and trust"
       }
     }
+  },
+  "publicity": {
+    "title": "Ready to predict,stake,and earn?",
+    "description": "Simple,fast,and highly rewarding – powered by blockchain transparency and centralized efficiency",
+    "startNow": "Start Now"
   }
 }

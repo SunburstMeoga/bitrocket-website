@@ -35,7 +35,7 @@ const WhitePaper = () => {
         <div className="w-[348vw] flex flex-col justify-center">
           {/* 标题 */}
           <h2
-            className="text-[70vw] font-poppins-light leading-[70vw] -tracking-[0.03vw] mt-[20vw] mb-[18vw]"
+            className="text-[70vw] font-poppins-light leading-[70vw] -tracking-[0.03vw] mt-[20vw] mb-[18vw] break-normal whitespace-normal"
             style={{
               background: 'linear-gradient(-71deg, #75513D 0%, #F3D5BB 100%)',
               WebkitBackgroundClip: 'text',
