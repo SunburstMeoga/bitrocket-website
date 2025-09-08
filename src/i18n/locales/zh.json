@@ -62,5 +62,27 @@
         "description": "现在每天免费获得50个LuckyUSD来练习投注 - 无风险，纯乐趣！"
       }
     }
+  },
+  "whitePaper": {
+    "title": "Bitrocket白皮书 V1.7",
+    "buttons": {
+      "download": "下载",
+      "readOnline": "在线阅读"
+    },
+    "description": "了解更多关于我们的预测市场、USDR代币经济学、VIP系统和奖励机制。",
+    "features": {
+      "coreFeatures": {
+        "title": "核心功能：",
+        "description": "1分钟BTC预测，1%每日质押收益"
+      },
+      "tokenLiquidity": {
+        "title": "代币流动性：",
+        "description": "USDR用于质押、质押和提取"
+      },
+      "security": {
+        "title": "安全性：",
+        "description": "混合模型确保速度和信任"
+      }
+    }
   }
 }

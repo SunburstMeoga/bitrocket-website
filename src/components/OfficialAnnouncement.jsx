@@ -20,7 +20,7 @@ const OfficialAnnouncement = () => {
   ]
 
   return (
-    <section className="w-full lg:hidden bg-[#353535] ">
+    <section className="w-full lg:hidden bg-[#353535] pb-[18vw]">
       <div className="w-full flex flex-col items-center">
         {/* 标题背景图和文案 */}
         <div className="relative w-full h-[200vw]">
@@ -37,7 +37,7 @@ const OfficialAnnouncement = () => {
               <h2
                 className="text-[48vw] font-poppins-medium leading-[61vw] tracking-[-0.05vw]"
                 style={{
-                  background: 'linear-gradient(-71deg, #F3D5BB 0%, #75513D 100%)',
+                  background: 'linear-gradient(-71deg, #75513D 0%, #F3D5BB 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text'

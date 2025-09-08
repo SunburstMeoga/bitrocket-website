@@ -4,6 +4,7 @@ import Banner from './components/Banner'
 import DataDisplay from './components/DataDisplay'
 import LatestNews from './components/LatestNews'
 import OfficialAnnouncement from './components/OfficialAnnouncement'
+import WhitePaper from './components/WhitePaper'
 
 function App() {
   const { t } = useTranslation()
@@ -26,6 +27,9 @@ function App() {
 
         {/* Official Announcement区域 - 仅在手机端显示 */}
         <OfficialAnnouncement />
+
+        {/* White Paper区域 - 仅在手机端显示 */}
+        <WhitePaper />
 
         {/* 其他内容区域 */}
         <div className="text-center py-[40vw] px-[16vw] hidden lg:block">

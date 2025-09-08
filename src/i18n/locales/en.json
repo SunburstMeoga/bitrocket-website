@@ -62,5 +62,27 @@
         "description": "Get 50 LuckyUSD for free every day to practice betting now – no risk, all fun!"
       }
     }
+  },
+  "whitePaper": {
+    "title": "Bitrocket White Paper V1.7",
+    "buttons": {
+      "download": "Download",
+      "readOnline": "Read Online"
+    },
+    "description": "Learn more about our prediction market, USDR token economics, VIP system, and rewards mechanism.",
+    "features": {
+      "coreFeatures": {
+        "title": "Core Features:",
+        "description": "1-minute BTC predictions, 1% daily staking returns"
+      },
+      "tokenLiquidity": {
+        "title": "Token Liquidity:",
+        "description": "USDR for staking, staking, and withdrawals"
+      },
+      "security": {
+        "title": "Security:",
+        "description": "Hybrid model ensures speed and trust"
+      }
+    }
   }
 }
