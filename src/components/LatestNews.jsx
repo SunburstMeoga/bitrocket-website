@@ -1,17 +1,19 @@
+import { useTranslation } from 'react-i18next'
 import latestNewsOne from '../assets/images/phone/latest-news-one.png'
 import latestNewsTwo from '../assets/images/phone/latest-news-two.png'
 import latestNewsThree from '../assets/images/phone/latest-news-three.png'
 
 const LatestNews = () => {
+  const { t } = useTranslation()
   const newsItems = [
     {
       id: 1,
       image: latestNewsOne,
       imageWidth: 'w-[256vw]',
       imageHeight: 'h-[238vw]',
-      title: 'New VIP tier unlocked!',
-      description: 'We\'ve introduced VIP7 for elite stakers – enjoy 15% higher dynamic rewards.',
-      time: '2 hours ago',
+      title: t('latestNews.news.vipTier.title'),
+      description: t('latestNews.news.vipTier.description'),
+      time: '2025-01-20',
       paddingTop: 'pt-[0vw]'
     },
     {
@@ -19,9 +21,9 @@ const LatestNews = () => {
       image: latestNewsTwo,
       imageWidth: 'w-[164vw]',
       imageHeight: 'h-[164vw]',
-      title: 'BTC prediction accuracy improved',
-      description: 'Enhanced real-time charts through Binance API integration provide more accurate forecasts.',
-      time: '5 hours ago',
+      title: t('latestNews.news.btcPrediction.title'),
+      description: t('latestNews.news.btcPrediction.description'),
+      time: '2025-01-19',
       paddingTop: 'pt-[29vw]'
     },
     {
@@ -29,9 +31,9 @@ const LatestNews = () => {
       image: latestNewsThree,
       imageWidth: 'w-[269vw]',
       imageHeight: 'h-[162vw]',
-      title: 'LuckyUSD daily airdrop increases',
-      description: 'Get 50 LuckyUSD for free every day to practice betting now – no risk, all fun!',
-      time: '1 day ago',
+      title: t('latestNews.news.luckyUsdAirdrop.title'),
+      description: t('latestNews.news.luckyUsdAirdrop.description'),
+      time: '2025-01-18',
       paddingTop: 'pt-[25vw]'
     }
   ]
@@ -40,7 +42,7 @@ const LatestNews = () => {
     <section className="w-full lg:hidden py-[60vw]">
       <div className="w-full flex flex-col items-center">
         {/* Latest News 标题 */}
-        <h2 
+        <h2
           className="text-[48vw] font-poppins-bold leading-[67vw] mb-[40vw]"
           style={{
             background: 'linear-gradient(-81deg, #F3D5BB 0%, #75513D 100%)',
@@ -49,7 +51,7 @@ const LatestNews = () => {
             backgroundClip: 'text'
           }}
         >
-          Latest News
+          {t('latestNews.title')}
         </h2>
 
         {/* 新闻卡片列表 */}
@@ -84,6 +86,16 @@ const LatestNews = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* View all updates 按钮 */}
+        <div
+          className="w-[320vw] h-[60vw] bg-[#159360] rounded-[17vw] flex items-center justify-center mt-[38vw] cursor-pointer lg:w-[240px] lg:h-[45px] lg:rounded-[12px] lg:mt-[28px] xl:w-[280px] xl:h-[50px] xl:rounded-[14px] xl:mt-[32px]"
+          onClick={() => console.log("click view all")}
+        >
+          <span className="text-white text-[30vw] font-poppins-regular leading-[45.9vw] tracking-[0.03vw] lg:text-[30vw] lg:leading-[45.9vw] lg:tracking-[0.03vw] xl:text-[30vw] xl:leading-[45.9vw] xl:tracking-[0.03vw]">
+            {t('latestNews.viewAllUpdates')}
+          </span>
         </div>
       </div>
     </section>

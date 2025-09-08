@@ -44,5 +44,23 @@
         ]
       }
     }
+  },
+  "latestNews": {
+    "title": "최신 뉴스",
+    "viewAllUpdates": "모든 업데이트 보기",
+    "news": {
+      "vipTier": {
+        "title": "새로운 VIP 등급 잠금 해제!",
+        "description": "엘리트 스테이커를 위한 VIP7을 도입했습니다 - 15% 더 높은 동적 보상을 즐기세요."
+      },
+      "btcPrediction": {
+        "title": "BTC 예측 정확도 향상",
+        "description": "바이낸스 API 통합을 통한 향상된 실시간 차트가 더 정확한 예측을 제공합니다."
+      },
+      "luckyUsdAirdrop": {
+        "title": "LuckyUSD 일일 에어드롭 증가",
+        "description": "지금 매일 50개의 LuckyUSD를 무료로 받아 베팅을 연습하세요 - 위험 없이, 모든 재미!"
+      }
+    }
   }
 }

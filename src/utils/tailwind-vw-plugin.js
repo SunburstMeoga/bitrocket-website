@@ -193,7 +193,7 @@ const vwPlugin = plugin(function({ addBase, addUtilities, matchUtilities, theme 
   const textVwUtilities = {}
 
   // 生成常用的字体大小 vw 值
-  const fontSizes = [11, 14, 16, 17, 18, 20, 24, 28, 32, 36, 48, 64]
+  const fontSizes = [11, 14, 16, 17, 18, 20, 24, 28, 30, 32, 36, 48, 64]
   fontSizes.forEach(size => {
     textVwUtilities[`.text-\\[${size}vw\\]`] = {
       'font-size': `calc(${size} * 100vw / var(--base-width)) !important`

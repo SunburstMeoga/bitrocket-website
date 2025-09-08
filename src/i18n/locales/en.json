@@ -44,5 +44,23 @@
         ]
       }
     }
+  },
+  "latestNews": {
+    "title": "Latest News",
+    "viewAllUpdates": "View all updates",
+    "news": {
+      "vipTier": {
+        "title": "New VIP tier unlocked!",
+        "description": "We've introduced VIP7 for elite stakers – enjoy 15% higher dynamic rewards."
+      },
+      "btcPrediction": {
+        "title": "BTC prediction accuracy improved",
+        "description": "Enhanced real-time charts through Binance API integration provide more accurate forecasts."
+      },
+      "luckyUsdAirdrop": {
+        "title": "LuckyUSD daily airdrop increases",
+        "description": "Get 50 LuckyUSD for free every day to practice betting now – no risk, all fun!"
+      }
+    }
   }
 }

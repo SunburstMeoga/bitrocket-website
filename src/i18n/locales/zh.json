@@ -44,5 +44,23 @@
         ]
       }
     }
+  },
+  "latestNews": {
+    "title": "最新资讯",
+    "viewAllUpdates": "查看全部更新",
+    "news": {
+      "vipTier": {
+        "title": "新VIP等级解锁！",
+        "description": "我们为精英质押者推出了VIP7等级 - 享受15%更高的动态奖励。"
+      },
+      "btcPrediction": {
+        "title": "BTC预测准确性提升",
+        "description": "通过币安API集成增强的实时图表提供更准确的预测。"
+      },
+      "luckyUsdAirdrop": {
+        "title": "LuckyUSD每日空投增加",
+        "description": "现在每天免费获得50个LuckyUSD来练习投注 - 无风险，纯乐趣！"
+      }
+    }
   }
 }
