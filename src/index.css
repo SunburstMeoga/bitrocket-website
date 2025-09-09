@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Pad端Banner字体大小 */
+.text-35vw {
+  font-size: calc(35 * 100vw / var(--base-width));
+}
+
+.text-52vw {
+  font-size: calc(52 * 100vw / var(--base-width));
+}
+
+/* 按钮阴影效果 */
+.shadow-button {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
 /* Poppins字体引入 - 每个字重使用独立的字体族名称 */
 @font-face {
   font-family: 'Poppins-Light';
