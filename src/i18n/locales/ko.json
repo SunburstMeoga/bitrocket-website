@@ -90,6 +90,14 @@
     "description": "간단하고, 빠르며, 높은 보상 - 블록체인 투명성과 중앙화된 효율성으로 구동",
     "startNow": "지금 시작"
   },
+  "header": {
+    "menu": {
+      "home": "홈",
+      "predictionMarket": "예측 시장",
+      "staking": "스테이킹",
+      "whitePaper": "백서"
+    }
+  },
   "footer": {
     "aboutUs": {
       "title": "회사 소개",

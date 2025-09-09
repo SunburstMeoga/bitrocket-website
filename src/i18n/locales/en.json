@@ -90,6 +90,14 @@
     "description": "Simple,fast,and highly rewarding – powered by blockchain transparency and centralized efficiency",
     "startNow": "Start Now"
   },
+  "header": {
+    "menu": {
+      "home": "Home",
+      "predictionMarket": "Prediction Market",
+      "staking": "Staking",
+      "whitePaper": "White Paper"
+    }
+  },
   "footer": {
     "aboutUs": {
       "title": "About Us",

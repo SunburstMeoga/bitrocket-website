@@ -85,8 +85,24 @@
   .h-\[94vw\] {
     height: calc(94 * 100vw / var(--base-width)) !important;
   }
+  .h-\[96vw\] {
+    height: calc(96 * 100vw / var(--base-width)) !important;
+  }
   .h-\[176vw\] {
     height: calc(176 * 100vw / var(--base-width)) !important;
+  }
+
+  /* 响应式高度覆盖 - 确保响应式类优先级更高 */
+  @media (min-width: 1024px) {
+    .lg\:h-\[96vw\] {
+      height: calc(96 * 100vw / var(--base-width)) !important;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .xl\:h-\[176vw\] {
+      height: calc(176 * 100vw / var(--base-width)) !important;
+    }
   }
 }
 

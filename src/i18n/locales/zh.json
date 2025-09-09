@@ -90,6 +90,14 @@
     "description": "简单、快速、高回报 - 由区块链透明度和中心化效率驱动",
     "startNow": "立即开始"
   },
+  "header": {
+    "menu": {
+      "home": "首页",
+      "predictionMarket": "预测市场",
+      "staking": "质押",
+      "whitePaper": "白皮书"
+    }
+  },
   "footer": {
     "aboutUs": {
       "title": "关于我们",

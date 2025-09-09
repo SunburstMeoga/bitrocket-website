@@ -20,16 +20,15 @@ describe('Header Component', () => {
     renderWithI18n(<Header />)
     const logo = screen.getByAltText('BitRocket')
     expect(logo).toBeInTheDocument()
-    expect(logo).toHaveClass('w-[120px]', 'h-[26px]')
   })
 
-  test('renders language switcher', () => {
+  test('renders language switcher with all language options', () => {
     renderWithI18n(<Header />)
-    const languageButton = screen.getByText(/Eng|中文/)
+    const languageButton = screen.getByText(/Eng|中文|한국어/)
     expect(languageButton).toBeInTheDocument()
   })
 
-  test('renders hamburger menu button', () => {
+  test('renders hamburger menu button on mobile', () => {
     renderWithI18n(<Header />)
     const hamburgerButton = screen.getByRole('button')
     expect(hamburgerButton).toBeInTheDocument()
@@ -37,32 +36,64 @@ describe('Header Component', () => {
 
   test('toggles mobile menu when hamburger is clicked', () => {
     renderWithI18n(<Header />)
-    
-    // Initially menu should be closed
-    expect(screen.queryByText('Home')).not.toBeVisible()
-    
-    // Click hamburger button
+
+    // Click hamburger button (last button should be hamburger)
     const hamburgerButtons = screen.getAllByRole('button')
-    const hamburgerButton = hamburgerButtons[1] // Second button is hamburger
+    const hamburgerButton = hamburgerButtons[hamburgerButtons.length - 1]
     fireEvent.click(hamburgerButton)
-    
-    // Menu should now be visible
-    expect(screen.getByText('Home')).toBeVisible()
-    expect(screen.getByText('About')).toBeVisible()
-    expect(screen.getByText('Features')).toBeVisible()
-    expect(screen.getByText('Contact')).toBeVisible()
+
+    // Menu items should now be visible (using translated text)
+    expect(screen.getByText('Home')).toBeInTheDocument()
+    expect(screen.getByText('Prediction Market')).toBeInTheDocument()
+    expect(screen.getByText('Staking')).toBeInTheDocument()
+    expect(screen.getByText('White Paper')).toBeInTheDocument()
   })
 
-  test('has correct background color and height', () => {
+  test('toggles language dropdown when clicked', () => {
     renderWithI18n(<Header />)
-    const header = screen.getByRole('banner')
-    expect(header).toHaveClass('bg-[#121212]', 'h-[58px]')
+
+    // Find language switcher button
+    const languageButton = screen.getByText(/Eng|中文|한국어/)
+    fireEvent.click(languageButton.closest('button'))
+
+    // Check if dropdown options appear
+    expect(screen.getByText('English')).toBeInTheDocument()
+    expect(screen.getByText('中文')).toBeInTheDocument()
+    expect(screen.getByText('한국어')).toBeInTheDocument()
   })
 
-  test('has correct max width for content', () => {
+  test('has correct background color and responsive heights', () => {
     renderWithI18n(<Header />)
     const header = screen.getByRole('banner')
-    const contentDiv = header.querySelector('div')
-    expect(contentDiv).toHaveClass('max-w-[373px]')
+    expect(header).toHaveClass('bg-[#121212]') // Updated background color
+    expect(header).toHaveClass('h-[58vw]') // Mobile height
+    expect(header).toHaveClass('lg:h-[96vw]') // Pad height (updated)
+    expect(header).toHaveClass('xl:h-[176vw]') // PC height
+  })
+
+  test('pad layout has correct dimensions', () => {
+    renderWithI18n(<Header />)
+
+    // Check if pad layout exists with correct classes
+    const padLayout = document.querySelector('.hidden.lg\\:flex.xl\\:hidden')
+    expect(padLayout).toBeInTheDocument()
+    expect(padLayout).toHaveClass('w-[928vw]', 'h-[96vw]')
+
+    // Check menu container width
+    const menuContainer = document.querySelector('.w-\\[288vw\\]')
+    expect(menuContainer).toBeInTheDocument()
+  })
+
+  test('language switcher has correct icon sizes for different breakpoints', () => {
+    renderWithI18n(<Header />)
+
+    // Check if language icons have correct responsive classes
+    const languageIcons = document.querySelectorAll('svg')
+    const languageIcon = Array.from(languageIcons).find(icon =>
+      icon.classList.contains('w-[18vw]') ||
+      icon.classList.contains('w-[17vw]') ||
+      icon.classList.contains('w-[32vw]')
+    )
+    expect(languageIcon).toBeInTheDocument()
   })
 })

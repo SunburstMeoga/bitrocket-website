@@ -10,15 +10,15 @@ const LanguageIcon = ({ className }) => (
   </svg>
 )
 
-// 下拉箭头图标组件
+// 下拉箭头图标组件 - 向下的大于号样式
 const DropdownIcon = ({ className, isOpen }) => (
-  <svg 
-    className={`${className} transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
-    viewBox="0 0 6 3" 
-    fill="none" 
+  <svg
+    className={`${className} transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+    viewBox="0 0 7 4"
+    fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M0 0L3 3L6 0" fill="currentColor"/>
+    <path d="M1 1L3.5 3L6 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 )
 
@@ -37,7 +37,7 @@ const HamburgerIcon = ({ className, isOpen }) => (
 )
 
 const Header = () => {
-  const { i18n } = useTranslation()
+  const { i18n, t } = useTranslation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false)
   const [currentLanguage, setCurrentLanguage] = useState(i18n.language || 'en')
@@ -50,7 +50,12 @@ const Header = () => {
     { code: 'ko', label: '한국어' }
   ]
 
-  const menuItems = ['Home', 'Prediction Market', 'Staking', 'White Paper']
+  const menuItems = [
+    { key: 'home', label: t('header.menu.home'), href: '#home' },
+    { key: 'predictionMarket', label: t('header.menu.predictionMarket'), href: '#prediction-market' },
+    { key: 'staking', label: t('header.menu.staking'), href: '#staking' },
+    { key: 'whitePaper', label: t('header.menu.whitePaper'), href: '#white-paper' }
+  ]
 
   // 点击外部区域关闭下拉菜单
   useEffect(() => {
@@ -84,7 +89,7 @@ const Header = () => {
   }
 
   return (
-    <header className="bg-[#191919]  w-full h-[58vw] lg:h-[94vw] xl:h-[176vw] fixed top-0 left-0 z-50 shadow-lg">
+    <header className="bg-[#121212] w-full lg:h-[96vw] xl:h-[176vw] h-[58vw] fixed top-0 left-0 z-50 shadow-lg">
       <div className="w-full flex justify-center">
         {/* Mobile Layout */}
         <div className="w-[362vw] h-[58vw] flex items-center justify-between lg:hidden">
@@ -109,11 +114,11 @@ const Header = () => {
                 <span className="text-[14vw] font-poppins-semibold">
                   {currentLanguage === 'en' ? 'Eng' : currentLanguage === 'zh' ? '中文' : '한국어'}
                 </span>
-                <DropdownIcon className="w-[6vw] h-[3vw]" isOpen={isLanguageDropdownOpen} />
+                <DropdownIcon className="w-[7vw] h-[4vw]" isOpen={isLanguageDropdownOpen} />
               </button>
 
               {/* Language Dropdown */}
-              <div className={`absolute top-full right-0 mt-[8vw] bg-[#121212] border border-gray-700 rounded-lg shadow-lg transition-all duration-200 overflow-hidden ${
+              <div className={`absolute top-full right-0 mt-[8vw] bg-[#121212] border border-gray-700 rounded-lg shadow-lg transition-all duration-200 overflow-hidden z-[9999] ${
                 isLanguageDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
               }`} style={{ minWidth: 'max-content' }}>
                 {languages.map((lang) => (
@@ -138,17 +143,17 @@ const Header = () => {
               </button>
 
               {/* Menu Dropdown */}
-              <div className={`absolute top-full right-0 mt-[8vw] bg-[#121212] border border-gray-700 rounded-lg shadow-lg transition-all duration-200 overflow-hidden ${
+              <div className={`absolute top-full right-0 mt-[8vw] bg-[#121212] border border-gray-700 rounded-lg shadow-lg transition-all duration-200 overflow-hidden z-[9999] ${
                 isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
               }`} style={{ minWidth: 'max-content' }}>
                 {menuItems.map((item) => (
                   <a
-                    key={item}
-                    href={`#${item.toLowerCase().replace(' ', '-')}`}
+                    key={item.key}
+                    href={item.href}
                     className="block text-white hover:bg-gray-800 transition-colors text-[11vw] font-poppins-semibold h-[48vw] flex items-center px-[18vw]"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {item}
+                    {item.label}
                   </a>
                 ))}
               </div>
@@ -157,25 +162,25 @@ const Header = () => {
         </div>
 
         {/* Pad Layout (lg: 1024px+) */}
-        <div className="hidden lg:flex xl:hidden w-[928vw] h-[94vw] items-center justify-between">
+        <div className="hidden lg:flex xl:hidden w-[928vw] h-[96vw] items-center ">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <img
+            <img 
               src={logo}
               alt="BitRocket"
               className="w-[150vw] h-[32vw] object-contain"
             />
           </div>
 
-          {/* Menu Items - 水平居中显示 */}
-          <div className="flex items-center justify-center w-[288vw] gap-[24vw]">
+          {/* Menu Items - 距离右边切换按钮184vw */}
+          <div className="flex items-center justify-between w-[288vw] h-[30vw] ml-auto mr-[184vw]">
             {menuItems.map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase().replace(' ', '-')}`}
-                className="text-white hover:text-gray-300 transition-colors text-[11vw] font-poppins-semibold whitespace-nowrap"
+                key={item.key}
+                href={item.href}
+                className="text-white hover:text-gray-300 transition-colors text-[11vw] font-poppins-semibold whitespace-nowrap leading-[30vw]"
               >
-                {item}
+                {item.label}
               </a>
             ))}
           </div>
@@ -186,15 +191,15 @@ const Header = () => {
               onClick={toggleLanguageDropdown}
               className="flex items-center text-white hover:text-gray-300 transition-colors gap-[8vw]"
             >
-              <LanguageIcon className="w-[18vw] h-[18vw]" />
+              <LanguageIcon className="w-[17vw] h-[17vw]" />
               <span className="text-[11vw] font-poppins-semibold">
                 {currentLanguage === 'en' ? 'Eng' : currentLanguage === 'zh' ? '中文' : '한국어'}
               </span>
-              <DropdownIcon className="w-[6vw] h-[3vw]" isOpen={isLanguageDropdownOpen} />
+              <DropdownIcon className="w-[7vw] h-[4vw]" isOpen={isLanguageDropdownOpen} />
             </button>
 
             {/* Language Dropdown */}
-            <div className={`absolute top-full right-0 mt-[8vw] bg-[#121212] border border-gray-700 rounded-lg shadow-lg transition-all duration-200 overflow-hidden ${
+            <div className={`absolute top-full right-0 mt-[8vw] bg-[#121212] border border-gray-700 rounded-lg shadow-lg transition-all duration-200 overflow-hidden z-[9999] ${
               isLanguageDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
             }`} style={{ minWidth: 'max-content' }}>
               {languages.map((lang) => (
@@ -225,11 +230,11 @@ const Header = () => {
           <div className="flex items-center justify-center w-[547vw] gap-[48vw]">
             {menuItems.map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase().replace(' ', '-')}`}
+                key={item.key}
+                href={item.href}
                 className="text-white hover:text-gray-300 transition-colors text-[20vw] font-poppins-semibold whitespace-nowrap"
               >
-                {item}
+                {item.label}
               </a>
             ))}
           </div>
@@ -248,7 +253,7 @@ const Header = () => {
             </button>
 
             {/* Language Dropdown */}
-            <div className={`absolute top-full right-0 mt-[8vw] bg-[#121212] border border-gray-700 rounded-lg shadow-lg transition-all duration-200 overflow-hidden ${
+            <div className={`absolute top-full right-0 mt-[8vw] bg-[#121212] border border-gray-700 rounded-lg shadow-lg transition-all duration-200 overflow-hidden z-[9999] ${
               isLanguageDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
             }`} style={{ minWidth: 'max-content' }}>
               {languages.map((lang) => (
