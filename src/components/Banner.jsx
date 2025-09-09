@@ -60,7 +60,7 @@ const Banner = () => {
       </section>
 
       {/* Pad端Banner */}
-      <section className="relative w-full h-[577vw] hidden lg:block xl:hidden overflow-hidden">
+      <section className="relative w-full h-[577vw] hidden lg:block xl:hidden overflow-hidden bg-[#121212]">
         {/* 背景图片 */}
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
