@@ -35,21 +35,6 @@ function App() {
 
         {/* Publicity区域 - 在所有设备上显示 */}
         <Publicity />
-
-        {/* 其他内容区域 */}
-        <div className="text-center py-[40vw] px-[16vw] hidden lg:block">
-          <h1 className="text-[32vw] lg:text-[32vw] xl:text-[32vw] font-poppins-bold text-white mb-4">
-            {t('welcome')}
-          </h1>
-          <p className="text-[16vw] lg:text-[16vw] xl:text-[16vw] text-gray-300 mt-[8vw] lg:mt-[8vw] xl:mt-[8vw]">
-            {t('description')}
-          </p>
-          <div className="mt-8">
-            <p className="text-[18vw] text-gray-400">
-              {t('content_placeholder', '内容区域，可以在这里添加你的组件')}
-            </p>
-          </div>
-        </div>
       </main>
 
       {/* Footer区域 - 在所有设备上显示 */}
