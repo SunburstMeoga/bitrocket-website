@@ -17,13 +17,13 @@ vi.mock('react-i18next', () => ({
 }))
 
 // Mock image imports
-vi.mock('../assets/images/phone/daily-active-users.png', () => ({
+vi.mock('../assets/images/daily-active-users.png', () => ({
   default: 'daily-active-users.png'
 }))
-vi.mock('../assets/images/phone/total-stake.png', () => ({
+vi.mock('../assets/images/total-stake.png', () => ({
   default: 'total-stake.png'
 }))
-vi.mock('../assets/images/phone/payment-prcessed.png', () => ({
+vi.mock('../assets/images/payment-prcessed.png', () => ({
   default: 'payment-processed.png'
 }))
 
@@ -60,11 +60,28 @@ describe('DataDisplay', () => {
     expect(screen.getByAltText('Payment processed')).toBeInTheDocument()
   })
 
-  it('has correct responsive classes', () => {
+  it('has correct responsive classes for mobile layout', () => {
     const { container } = render(<DataDisplay />)
-    const section = container.querySelector('section')
-    
-    // Check if the section has the correct responsive classes
-    expect(section).toHaveClass('w-full', 'lg:hidden')
+    const mobileSection = container.querySelector('section')
+
+    // Check if the mobile section has the correct responsive classes
+    expect(mobileSection).toHaveClass('w-full', 'lg:hidden')
+  })
+
+  it('has correct responsive classes for pad layout', () => {
+    const { container } = render(<DataDisplay />)
+    const sections = container.querySelectorAll('section')
+    const padSection = sections[1] // Second section is for pad layout
+
+    // Check if the pad section has the correct responsive classes
+    expect(padSection).toHaveClass('w-full', 'hidden', 'lg:flex', 'xl:hidden')
+  })
+
+  it('renders both mobile and pad layouts', () => {
+    const { container } = render(<DataDisplay />)
+    const sections = container.querySelectorAll('section')
+
+    // Should have two sections: one for mobile, one for pad
+    expect(sections).toHaveLength(2)
   })
 })
