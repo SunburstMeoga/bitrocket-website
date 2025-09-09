@@ -4,8 +4,9 @@ import { I18nextProvider } from 'react-i18next'
 import i18n from '../../i18n'
 import Publicity from '../Publicity'
 
-// Mock the publicity image import
-jest.mock('../../assets/images/phone/publicity.png', () => 'publicity.png')
+// Mock the publicity image imports
+jest.mock('../../assets/images/phone/publicity.png', () => 'publicity-phone.png')
+jest.mock('../../assets/images/pad/publicity.png', () => 'publicity-pad.png')
 
 describe('Publicity Component', () => {
   const renderWithI18n = (component) => {
@@ -76,5 +77,32 @@ describe('Publicity Component', () => {
     // 检查按钮容器是否居中
     const buttonContainer = screen.getByText(/Start Now/i).closest('div').parentElement
     expect(buttonContainer).toHaveClass('flex', 'justify-center')
+  })
+
+  test('has pad-specific styling for lg breakpoint', () => {
+    renderWithI18n(<Publicity />)
+
+    // 检查pad端容器是否存在
+    const padContainer = document.querySelector('.hidden.lg\\:block.xl\\:hidden')
+    expect(padContainer).toBeInTheDocument()
+
+    // 检查pad端图片是否存在
+    const padImage = document.querySelector('img.hidden.lg\\:block.xl\\:hidden')
+    expect(padImage).toBeInTheDocument()
+    expect(padImage).toHaveAttribute('src', 'publicity-pad.png')
+  })
+
+  test('renders different images for different breakpoints', () => {
+    renderWithI18n(<Publicity />)
+
+    // 检查手机端图片
+    const phoneImage = document.querySelector('img.lg\\:hidden.xl\\:block')
+    expect(phoneImage).toBeInTheDocument()
+    expect(phoneImage).toHaveAttribute('src', 'publicity-phone.png')
+
+    // 检查pad端图片
+    const padImage = document.querySelector('img.hidden.lg\\:block.xl\\:hidden')
+    expect(padImage).toBeInTheDocument()
+    expect(padImage).toHaveAttribute('src', 'publicity-pad.png')
   })
 })
