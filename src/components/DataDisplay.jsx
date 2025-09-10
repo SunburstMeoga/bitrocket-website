@@ -126,6 +126,55 @@ const DataDisplay = () => {
           ))}
         </div>
       </section>
+
+      {/* PC端布局 */}
+      <section className="w-full hidden xl:flex pt-[51vw] px-[332vw]">
+        <div className="w-full flex justify-center items-center">
+          {dataItems.map((item, index) => (
+            <div key={index} className="flex flex-col items-center justify-center flex-1">
+              {/* 图片部分 */}
+              <div className="mb-[30vw] flex items-center justify-center">
+                <img
+                  src={item.icon}
+                  alt={item.description}
+                  className="w-[174vw] h-auto object-contain"
+                />
+              </div>
+
+              {/* 数值部分 */}
+              <div className="flex items-baseline justify-center">
+                <span
+                  className="text-[64vw] font-poppins-semibold"
+                  style={{
+                    background: 'linear-gradient(45deg, #F3D5BB 0%, #A77F5C 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
+                  }}
+                >
+                  {item.value}
+                </span>
+                <span
+                  className="text-[48vw] font-poppins-semibold ml-[4vw]"
+                  style={{
+                    background: 'linear-gradient(45deg, #F3D5BB 0%, #A77F5C 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
+                  }}
+                >
+                  {item.unit}
+                </span>
+              </div>
+
+              {/* 描述文案部分 */}
+              <div className="text-[#9D9D9D] text-[20vw] font-poppins-semibold text-center -tracking-[0.5vw] mt-[8vw]">
+                {item.description}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </>
   )
 }
