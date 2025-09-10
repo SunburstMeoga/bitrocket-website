@@ -192,88 +192,90 @@ const Footer = () => {
       </div>
 
       {/* PC Layout (xl: 1280px+) */}
-      <div className="hidden xl:flex w-[1200vw] flex-col items-center py-[80vw]">
-        {/* First Section - Three Lists in a row */}
-        <div className="flex justify-between w-full">
-          {/* About Us */}
-          <div className="flex flex-col items-start w-[360vw]">
-            <h3 className="text-[48vw] font-poppins-semibold text-white mb-[54vw]">
-              {t('footer.aboutUs.title')}
-            </h3>
-            <div className="flex flex-col gap-[45vw] items-start">
-              <a href="#company-profile" className="text-[32vw] font-poppins-medium text-white hover:text-gray-300 transition-colors">
-                {t('footer.aboutUs.companyProfile')}
-              </a>
-              <a href="#team-profile" className="text-[32vw] font-poppins-medium text-white hover:text-gray-300 transition-colors">
-                {t('footer.aboutUs.teamProfile')}
-              </a>
-              <a href="#contact-us" className="text-[32vw] font-poppins-medium text-white hover:text-gray-300 transition-colors">
-                {t('footer.aboutUs.contactUs')}
-              </a>
+      <div className="hidden xl:flex w-full justify-center">
+        <div className="w-[1600vw] flex flex-col">
+          {/* First Section - Three Lists in a row */}
+          <div className="flex pt-[80vw]">
+            {/* About Us */}
+            <div className="flex flex-col items-start">
+              <h3 className="text-[24vw] font-poppins-semibold text-white mb-[12vw]">
+                {t('footer.aboutUs.title')}
+              </h3>
+              <div className="flex flex-col gap-[12vw] items-start">
+                <a href="#company-profile" className="text-[20vw] font-poppins-medium text-white hover:text-gray-300 transition-colors">
+                  {t('footer.aboutUs.companyProfile')}
+                </a>
+                <a href="#team-profile" className="text-[20vw] font-poppins-medium text-white hover:text-gray-300 transition-colors">
+                  {t('footer.aboutUs.teamProfile')}
+                </a>
+                <a href="#contact-us" className="text-[20vw] font-poppins-medium text-white hover:text-gray-300 transition-colors">
+                  {t('footer.aboutUs.contactUs')}
+                </a>
+              </div>
+            </div>
+
+            {/* Products and Services */}
+            <div className="flex flex-col items-start ml-[438vw]">
+              <h3 className="text-[24vw] font-poppins-semibold text-white mb-[12vw]">
+                {t('footer.productsAndServices.title')}
+              </h3>
+              <div className="flex flex-col gap-[12vw] items-start">
+                <a href="#prediction-market" className="text-[20vw] font-poppins-medium text-white hover:text-gray-300 transition-colors">
+                  {t('footer.productsAndServices.predictionMarket')}
+                </a>
+                <a href="#staking-system" className="text-[20vw] font-poppins-medium text-white hover:text-gray-300 transition-colors">
+                  {t('footer.productsAndServices.stakingSystem')}
+                </a>
+                <a href="#vip-levels" className="text-[20vw] font-poppins-medium text-white hover:text-gray-300 transition-colors">
+                  {t('footer.productsAndServices.vipLevels')}
+                </a>
+              </div>
+            </div>
+
+            {/* Help Center */}
+            <div className="flex flex-col items-start ml-[438vw]">
+              <h3 className="text-[24vw] font-poppins-semibold text-white mb-[12vw]">
+                {t('footer.helpCenter.title')}
+              </h3>
+              <div className="flex flex-col gap-[12vw] items-start">
+                <a href="#beginners-guide" className="text-[20vw] font-poppins-medium text-white hover:text-gray-300 transition-colors">
+                  {t('footer.helpCenter.beginnersGuide')}
+                </a>
+                <a href="#faq" className="text-[20vw] font-poppins-medium text-white hover:text-gray-300 transition-colors">
+                  {t('footer.helpCenter.faq')}
+                </a>
+                <a href="#fees" className="text-[20vw] font-poppins-medium text-white hover:text-gray-300 transition-colors">
+                  {t('footer.helpCenter.fees')}
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* Products and Services */}
-          <div className="flex flex-col items-start w-[360vw]">
-            <h3 className="text-[48vw] font-poppins-semibold text-white mb-[54vw]">
-              {t('footer.productsAndServices.title')}
-            </h3>
-            <div className="flex flex-col gap-[45vw] items-start">
-              <a href="#prediction-market" className="text-[32vw] font-poppins-medium text-white hover:text-gray-300 transition-colors">
-                {t('footer.productsAndServices.predictionMarket')}
+          {/* Second Section - Social Media Icons */}
+          <div className="flex items-center mt-[74vw]">
+            {socialMediaLinks.map((social, index) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`hover:opacity-80 transition-opacity ${index > 0 ? 'ml-[50vw]' : ''}`}
+              >
+                <img
+                  src={social.icon}
+                  alt={social.name}
+                  className="w-[28vw] h-auto object-contain"
+                />
               </a>
-              <a href="#staking-system" className="text-[32vw] font-poppins-medium text-white hover:text-gray-300 transition-colors">
-                {t('footer.productsAndServices.stakingSystem')}
-              </a>
-              <a href="#vip-levels" className="text-[32vw] font-poppins-medium text-white hover:text-gray-300 transition-colors">
-                {t('footer.productsAndServices.vipLevels')}
-              </a>
-            </div>
+            ))}
           </div>
 
-          {/* Help Center */}
-          <div className="flex flex-col items-start w-[360vw]">
-            <h3 className="text-[48vw] font-poppins-semibold text-white mb-[54vw]">
-              {t('footer.helpCenter.title')}
-            </h3>
-            <div className="flex flex-col gap-[45vw] items-start">
-              <a href="#beginners-guide" className="text-[32vw] font-poppins-medium text-white hover:text-gray-300 transition-colors">
-                {t('footer.helpCenter.beginnersGuide')}
-              </a>
-              <a href="#faq" className="text-[32vw] font-poppins-medium text-white hover:text-gray-300 transition-colors">
-                {t('footer.helpCenter.faq')}
-              </a>
-              <a href="#fees" className="text-[32vw] font-poppins-medium text-white hover:text-gray-300 transition-colors">
-                {t('footer.helpCenter.fees')}
-              </a>
-            </div>
+          {/* Third Section - Copyright */}
+          <div className="h-[79vw] flex items-center justify-center mt-[69vw]">
+            <p className="text-[14vw] font-poppins-semibold text-[#6C6C6C] text-center">
+              {t('footer.copyright', { year: currentYear })}
+            </p>
           </div>
-        </div>
-
-        {/* Second Section - Social Media Icons */}
-        <div className="w-[600vw] flex justify-between items-center mt-[120vw]">
-          {socialMediaLinks.map((social) => (
-            <a
-              key={social.name}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity"
-            >
-              <img
-                src={social.icon}
-                alt={social.name}
-                className="w-[64vw] h-[64vw] object-contain"
-              />
-            </a>
-          ))}
-        </div>
-
-        {/* Third Section - Copyright */}
-        <div className="w-[600vw] h-[120vw] flex items-center justify-center mt-[120vw]">
-          <p className="text-[28vw] font-poppins-semibold text-[#6C6C6C] text-center">
-            {t('footer.copyright', { year: currentYear })}
-          </p>
         </div>
       </div>
     </footer>
