@@ -7,6 +7,7 @@ import Publicity from '../Publicity'
 // Mock the publicity image imports
 jest.mock('../../assets/images/phone/publicity.png', () => 'publicity-phone.png')
 jest.mock('../../assets/images/pad/publicity.png', () => 'publicity-pad.png')
+jest.mock('../../assets/images/pc/publicity.png', () => 'publicity-pc.png')
 
 describe('Publicity Component', () => {
   const renderWithI18n = (component) => {
@@ -96,7 +97,7 @@ describe('Publicity Component', () => {
     renderWithI18n(<Publicity />)
 
     // 检查手机端图片
-    const phoneImage = document.querySelector('img.lg\\:hidden.xl\\:block')
+    const phoneImage = document.querySelector('img.lg\\:hidden.xl\\:hidden')
     expect(phoneImage).toBeInTheDocument()
     expect(phoneImage).toHaveAttribute('src', 'publicity-phone.png')
 
@@ -104,5 +105,21 @@ describe('Publicity Component', () => {
     const padImage = document.querySelector('img.hidden.lg\\:block.xl\\:hidden')
     expect(padImage).toBeInTheDocument()
     expect(padImage).toHaveAttribute('src', 'publicity-pad.png')
+
+    // 检查PC端图片
+    const pcImage = document.querySelector('img.hidden.xl\\:block')
+    expect(pcImage).toBeInTheDocument()
+    expect(pcImage).toHaveAttribute('src', 'publicity-pc.png')
+  })
+
+  test('has pc-specific styling for xl breakpoint', () => {
+    renderWithI18n(<Publicity />)
+
+    // 检查PC端容器是否存在
+    const pcContainer = document.querySelector('.hidden.xl\\:block.box-border')
+    expect(pcContainer).toBeInTheDocument()
+
+    // 检查PC端容器的padding设置
+    expect(pcContainer).toHaveClass('pt-[65vw]', 'pl-[34vw]')
   })
 })
