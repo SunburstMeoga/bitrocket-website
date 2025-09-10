@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import whitePaperBg from '../assets/images/phone/white-paper.png'
 import whitePaperBgPad from '../assets/images/pad/white-paper.png'
+import whitePaperBgPc from '../assets/images/pc/white-paper.png'
 
 const WhitePaper = () => {
   const { t } = useTranslation()
@@ -163,6 +164,84 @@ const WhitePaper = () => {
                     {/* 内容 */}
                     <div className="flex-1">
                       <div className="text-white text-[16vw] font-poppins-medium leading-[23.4vw]">
+                        <span className="font-poppins-medium">{t(feature.titleKey)}</span>
+                        <span className="font-poppins-medium">{t(feature.descriptionKey)}</span>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PC端 */}
+      <section className="w-full hidden xl:flex relative">
+        {/* 背景图片 */}
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(${whitePaperBgPc})`
+          }}
+        />
+
+        {/* 内容区域 */}
+        <div className="relative z-10 w-full py-[143vw] px-[175vw] pb-[78vw] pr-[130vw]">
+          {/* 左侧：标题+按钮组区域 */}
+          <div>
+            {/* 标题 */}
+            <h2
+              className="w-[742vw] text-[96vw] font-poppins-medium leading-[108vw]"
+              style={{
+                background: 'linear-gradient(-71deg, #75513D 0%, #F3D5BB 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}
+            >
+              {t('whitePaper.title')}
+            </h2>
+
+            {/* 按钮组 */}
+            <div className="flex gap-[24vw] mt-[55vw]">
+              {/* Download 按钮 */}
+              <div className="w-[350vw] h-[72vw] bg-[#159360] border border-[#159360] rounded-[17vw] flex items-center justify-center px-[34vw] box-border shadow-button">
+                <span className="text-white text-[24vw] font-poppins-regular">
+                  {t('whitePaper.buttons.download')}
+                </span>
+                {/* 右箭头 - 白色 */}
+                <span className="text-white text-[22vw] ml-[8vw]">→</span>
+              </div>
+
+              {/* Read Online 按钮 */}
+              <div className="w-[350vw] h-[72vw] bg-[#222221] border border-[#159360] rounded-[17vw] flex items-center justify-center px-[34vw] box-border shadow-button">
+                <span className="text-white text-[24vw] font-poppins-regular">
+                  {t('whitePaper.buttons.readOnline')}
+                </span>
+                {/* 右箭头 - #159360 */}
+                <span className="text-[#159360] text-[22vw] ml-[8vw]">→</span>
+              </div>
+            </div>
+          </div>
+
+          {/* 右侧：描述文案+特性列表区域 */}
+          <div className="flex justify-end mt-[82vw]">
+            <div className="w-[905vw]">
+              {/* 描述文案 */}
+              <p className="text-[#9d9d9d] text-[32vw] font-poppins-medium leading-[45vw] text-left">
+                {t('whitePaper.description')}
+              </p>
+
+              {/* 特性列表 */}
+              <ul className="mt-[33vw] space-y-[2vw]">
+                {features.map((feature, index) => (
+                  <li key={index} className="flex items-start">
+                    {/* 圆点 */}
+                    <div className="w-[8vw] h-[8vw] bg-white rounded-full mt-[12vw] mr-[12vw] flex-shrink-0"></div>
+                    {/* 内容 */}
+                    <div className="flex-1">
+                      <div className="text-white text-[24vw] font-poppins-medium leading-[33vw]">
                         <span className="font-poppins-medium">{t(feature.titleKey)}</span>
                         <span className="font-poppins-medium">{t(feature.descriptionKey)}</span>
                       </div>
