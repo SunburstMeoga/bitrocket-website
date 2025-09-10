@@ -182,6 +182,73 @@ const LatestNews = () => {
           </div>
         </div>
       </section>
+
+      {/* PC端布局 */}
+      <section className="w-full hidden xl:flex justify-center mt-[128vw]">
+        <div className="w-full max-w-[1742vw] flex flex-col items-center">
+          {/* Latest News 标题 */}
+          <h2
+            className="text-[96vw] font-poppins-medium leading-[96vw] mb-[128vw]"
+            style={{
+              background: 'linear-gradient(-81deg, #75513D 0%, #F3D5BB 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}
+          >
+            {t('latestNews.title')}
+          </h2>
+
+          {/* 新闻卡片列表 - 水平排列 */}
+          <div className="w-full flex justify-between px-[220vw]">
+            {newsItems.map((item, index) => (
+              <div
+                key={item.id}
+                className="w-[399vw] h-[488vw] bg-[#252525] rounded-[27vw] box-border px-[40vw] pb-[30vw] pt-[30vw] flex flex-col"
+              >
+                {/* 图片 */}
+                <div className="w-full flex justify-center mb-[30vw] flex-shrink-0">
+                  <img
+                    src={item.imagePad}
+                    alt={item.title}
+                    className={`object-contain ${
+                      index === 0 ? 'w-[318vw] h-[318vw] -mt-[80vw]' :
+                      index === 1 ? 'w-[196vw] h-[196vw]' :
+                      'w-[322vw] h-[194vw]'
+                    }`}
+                  />
+                </div>
+
+                {/* 标题 */}
+                <h3 className="text-white text-[24vw] font-poppins-medium leading-[30vw] mb-[20vw] flex-shrink-0">
+                  {item.title}
+                </h3>
+
+                {/* 描述文案 */}
+                <p className="text-white text-[16vw] font-poppins-regular leading-[24vw] mb-[20vw] flex-grow">
+                  {item.description}
+                </p>
+
+                {/* 时间 */}
+                <div className="text-[#9D9D9D] text-[14vw] font-poppins-regular leading-[27vw] flex-shrink-0">
+                  {item.time}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* View all updates 按钮 */}
+          <div
+            className="w-[380vw] h-[72vw] bg-[#159360] rounded-[20vw] flex items-center justify-center mt-[127vw] mb-[126vw] cursor-pointer hover:bg-[#138a54] transition-colors gap-[10vw]"
+            onClick={() => console.log("click view all")}
+          >
+            <span className="text-white text-[36vw] font-poppins-regular">
+              {t('latestNews.viewAllUpdates')}
+            </span>
+            <span className="text-white text-[36vw]">→</span>
+          </div>
+        </div>
+      </section>
     </>
   )
 }
