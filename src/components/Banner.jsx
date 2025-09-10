@@ -38,8 +38,9 @@ const Banner = () => {
 
             {/* 第四部分：Get Started 按钮 */}
             <div className="mt-[18vw]">
-              <div className="bg-[#159360] text-white text-[20vw] font-poppins-regular h-[38vw] px-[32vw] rounded-[11vw] flex items-center justify-center inline-flex">
-                {t('banner.get_started')}
+              <div className="bg-[#159360] text-white text-[20vw] font-poppins-regular h-[38vw] px-[32vw] rounded-[11vw] flex items-center justify-center inline-flex gap-[2vw]">
+                <span>{t('banner.get_started')}</span>
+                <span className="text-[20vw]">→</span>
               </div>
             </div>
 
@@ -88,12 +89,55 @@ const Banner = () => {
             </div>
 
             {/* 第四部分：Get Started 按钮 */}
-            <div className="bg-[#159360] text-white text-[20vw] font-poppins-regular w-[155vw] h-[38vw] rounded-[11vw] flex items-center justify-center cursor-pointer hover:bg-[#138a54] transition-colors mt-[20vw] shadow-button">
-              {t('banner.get_started')}
+            <div className="bg-[#159360] text-white text-[20vw] font-poppins-regular w-[155vw] h-[38vw] rounded-[11vw] flex items-center justify-center cursor-pointer hover:bg-[#138a54] transition-colors mt-[20vw] shadow-button gap-[2vw]">
+              <span>{t('banner.get_started')}</span>
+              <span className="text-[20vw]">→</span>
             </div>
 
             {/* 第五部分：流动性信息 */}
             <div className="text-white text-[14vw] font-poppins-semibold leading-[30vw] mt-[20vw]">
+              {t('banner.liquidity_info')}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PC端Banner */}
+      <section className="relative w-full h-[1080vw] hidden xl:block overflow-hidden bg-[#121212]">
+        {/* 背景图片 */}
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(${bannerImagePad})`
+          }}
+        />
+
+        {/* 内容区域 */}
+        <div className="relative z-10 ml-[179vw]">
+          <div className="w-[1389vw] mt-[244vw] flex flex-col items-start">
+            {/* 第一部分：Revolutionize your */}
+            <div className="text-white text-[64vw] font-poppins-semibold leading-[108vw]">
+              {t('banner.title_part1')}
+            </div>
+
+            {/* 第二部分：cryptocurrency experience */}
+            <div className="text-white text-[96vw] font-poppins-semibold leading-[108vw]">
+              {t('banner.title_part2')}
+            </div>
+
+            {/* 第三部分：描述文字 */}
+            <div className="text-white text-[36vw] font-poppins-regular leading-[55vw]">
+              {t('banner.description')}
+            </div>
+
+            {/* 第四部分：Get Started 按钮 */}
+            <div className="bg-[#159360] text-white text-[36vw] font-poppins-regular w-[291vw] h-[72vw] rounded-[20vw] flex items-center justify-center cursor-pointer hover:bg-[#138a54] transition-colors shadow-button gap-[10vw]">
+              <span>{t('banner.get_started')}</span>
+              <span className="text-[36vw]">→</span>
+            </div>
+
+            {/* 第五部分：流动性信息 */}
+            <div className="text-white text-[24vw] font-poppins-semibold leading-[55vw] mt-[30vw]">
               {t('banner.liquidity_info')}
             </div>
           </div>

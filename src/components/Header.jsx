@@ -89,7 +89,7 @@ const Header = () => {
   }
 
   return (
-    <header className="bg-transparent w-full lg:h-[96vw] xl:h-[176vw] h-[58vw] fixed top-0 left-0 z-50">
+    <header className="bg-transparent w-full lg:h-[96vw] xl:h-[180vw] h-[58vw] fixed top-0 left-0 z-50">
       <div className="w-full flex justify-center">
         {/* Mobile Layout */}
         <div className="w-[362vw] h-[58vw] flex items-center justify-between lg:hidden">
@@ -216,7 +216,7 @@ const Header = () => {
         </div>
 
         {/* PC Layout (xl: 1280px+) */}
-        <div className="hidden xl:flex w-[1740vw] h-[176vw] items-center justify-between">
+        <div className="hidden xl:flex w-[1742vw] h-[180vw] items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
             <img
@@ -226,13 +226,13 @@ const Header = () => {
             />
           </div>
 
-          {/* Menu Items - 水平居中显示 */}
-          <div className="flex items-center justify-center w-[547vw] gap-[48vw]">
+          {/* Menu Items - 距离右边语言选择334vw */}
+          <div className="flex items-center justify-between w-[547vw] h-[55vw] ml-auto mr-[334vw]">
             {menuItems.map((item) => (
               <a
                 key={item.key}
                 href={item.href}
-                className="text-white hover:text-gray-300 transition-colors text-[20vw] font-poppins-semibold whitespace-nowrap"
+                className="text-white hover:text-gray-300 transition-colors text-[20vw] font-poppins-semibold whitespace-nowrap leading-[55vw]"
               >
                 {item.label}
               </a>

@@ -4,7 +4,7 @@ const plugin = require('tailwindcss/plugin')
 const baseWidths = {
   mobile: 390,  // 手机端基准宽度
   pad: 1024,    // pad端基准宽度
-  pc: 1280      // pc端基准宽度
+  pc: 1920      // pc端基准宽度
 }
 
 // vw函数 - 使用CSS calc和变量来动态计算
@@ -193,7 +193,7 @@ const vwPlugin = plugin(function({ addBase, addUtilities, matchUtilities, theme 
   const textVwUtilities = {}
 
   // 生成常用的字体大小 vw 值
-  const fontSizes = [9, 9.95, 11, 12, 14, 16, 17, 18, 20, 22, 23, 24, 28, 30, 32, 35, 36, 45, 48, 52, 64, 70, 75, 140]
+  const fontSizes = [9, 9.95, 11, 12, 14, 16, 17, 18, 20, 22, 23, 24, 28, 30, 32, 35, 36, 45, 48, 52, 64, 70, 75, 96, 140]
   fontSizes.forEach(size => {
     textVwUtilities[`.text-\\[${size}vw\\]`] = {
       'font-size': `calc(${size} * 100vw / var(--base-width)) !important`
